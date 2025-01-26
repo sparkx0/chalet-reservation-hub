@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,8 +25,18 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
           <div className="hidden md:flex gap-8">
+            <Link
+              to="/activites"
+              className={`text-wood-dark hover:text-wood transition-colors font-serif ${
+                location.pathname === "/activites" ? "text-wood" : ""
+              }`}
+            >
+              Activités
+            </Link>
             <a
               href="#espaces"
               className="text-wood-dark hover:text-wood transition-colors font-serif"
