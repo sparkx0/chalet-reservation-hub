@@ -4,17 +4,17 @@ const spaces = [
   {
     title: "Salon-Séjour",
     description: "Espace de vie de 120m² avec cheminée ouverte",
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+    image: "/lovable-uploads/a0abb74c-40ab-46eb-98b4-1744434757a9.png",
   },
   {
     title: "Chambres",
     description: "7 chambres confortables et élégantes",
-    image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb",
+    image: "/lovable-uploads/d7bfbf16-f70b-4310-8b52-e8e1798c2a04.png",
   },
   {
-    title: "Piscine & Bien-être",
-    description: "Piscine intérieure chauffée et sauna",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+    title: "Vue Panoramique",
+    description: "Vue exceptionnelle sur les Alpes",
+    image: "/lovable-uploads/0ce6cff6-6aba-49e0-9e8a-45515a175135.png",
   },
 ];
 
