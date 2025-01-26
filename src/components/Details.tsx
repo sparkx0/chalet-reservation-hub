@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bed, Users, Bath, Wifi, Car, Snowflake } from "lucide-react";
+import { Bed, Users, Bath, Wifi, Car, Snowflake, Pool, Dumbbell, Flame } from "lucide-react";
 
 const Details = () => {
   const amenities = [
@@ -17,6 +17,21 @@ const Details = () => {
       icon: <Users className="w-6 h-6" />,
       title: "Espaces communs",
       description: "Salon 120m² · Cuisine équipée",
+    },
+    {
+      icon: <Pool className="w-6 h-6" />,
+      title: "Piscine chauffée",
+      description: "Accessible toute l'année",
+    },
+    {
+      icon: <Dumbbell className="w-6 h-6" />,
+      title: "Salle de sport",
+      description: "Équipements professionnels",
+    },
+    {
+      icon: <Flame className="w-6 h-6" />,
+      title: "Sauna privé",
+      description: "Détente et bien-être",
     },
     {
       icon: <Wifi className="w-6 h-6" />,
@@ -89,7 +104,8 @@ const Details = () => {
               Le chalet dispose d'un vaste salon-séjour de 120m² avec cheminée,
               d'une cuisine entièrement équipée, et de 7 chambres pouvant accueillir
               jusqu'à 14 personnes. Profitez également d'une grande terrasse pour
-              vos repas en plein air avec vue panoramique.
+              vos repas en plein air avec vue panoramique, ainsi que des espaces
+              bien-être avec piscine chauffée, salle de sport et sauna privé.
             </p>
           </motion.div>
         </motion.div>
