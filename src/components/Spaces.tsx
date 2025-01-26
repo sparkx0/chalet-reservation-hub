@@ -90,6 +90,52 @@ const Spaces = () => {
               Une vue imprenable sur les Alpes depuis votre terrasse privative
             </p>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="group"
+          >
+            <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
+              <img
+                src="/lovable-uploads/4d342c91-ceb6-4141-a701-6f69d7172cd8.png"
+                alt="Sauna"
+                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+            </div>
+            <h3 className="text-2xl font-serif mt-4 mb-2 text-wood-dark">
+              Sauna
+            </h3>
+            <p className="text-wood-dark/80 mb-4">
+              Un sauna privé pour des moments de détente et de bien-être
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="group"
+          >
+            <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
+              <img
+                src="/lovable-uploads/d7bfbf16-f70b-4310-8b52-e8e1798c2a04.png"
+                alt="Salle de sport"
+                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+            </div>
+            <h3 className="text-2xl font-serif mt-4 mb-2 text-wood-dark">
+              Salle de sport
+            </h3>
+            <p className="text-wood-dark/80 mb-4">
+              Une salle de sport équipée pour maintenir votre forme pendant votre séjour
+            </p>
+          </motion.div>
         </div>
 
         <motion.div
