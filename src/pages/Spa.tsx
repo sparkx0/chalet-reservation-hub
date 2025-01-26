@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Pool, Ruler, Waves } from "lucide-react";
+import { Waves, Ruler, Dumbbell, Flame } from "lucide-react";
+import Navigation from "@/components/Navigation";
 
 const Spa = () => {
   return (
     <div className="min-h-screen bg-snow pt-24">
+      <Navigation />
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,7 +25,7 @@ const Spa = () => {
                 Piscine Chauffée
               </CardTitle>
               <CardDescription className="flex items-center gap-2">
-                <Pool className="w-4 h-4" />
+                <Waves className="w-4 h-4" />
                 Accessible toute l'année
               </CardDescription>
             </CardHeader>
@@ -61,7 +63,8 @@ const Spa = () => {
               <CardTitle className="text-2xl font-serif text-wood-dark">
                 Sauna Privé
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="flex items-center gap-2">
+                <Flame className="w-4 h-4" />
                 Un espace de détente et de bien-être
               </CardDescription>
             </CardHeader>
@@ -80,7 +83,8 @@ const Spa = () => {
               <CardTitle className="text-2xl font-serif text-wood-dark">
                 Salle de Sport
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="flex items-center gap-2">
+                <Dumbbell className="w-4 h-4" />
                 Équipements professionnels et coaching personnalisé
               </CardDescription>
             </CardHeader>
