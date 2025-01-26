@@ -55,7 +55,7 @@ const Spaces = () => {
             <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
               <img
                 src="/lovable-uploads/1fa5ade7-9389-4844-87eb-72a28c18610c.png"
-                alt="Chambre"
+                alt="Piscine"
                 className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
@@ -77,7 +77,7 @@ const Spaces = () => {
           >
             <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
               <img
-                src="/lovable-uploads/1fa5ade7-9389-4844-87eb-72a28c18610c.png"
+                src="/lovable-uploads/e648d43b-e0c4-443d-b120-43117be90e8e.png"
                 alt="Panorama époustouflant"
                 className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
               />
