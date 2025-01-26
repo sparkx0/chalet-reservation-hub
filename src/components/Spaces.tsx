@@ -54,7 +54,7 @@ const Spaces = () => {
           >
             <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
               <img
-                src="/lovable-uploads/another-image.png"
+                src="/lovable-uploads/1fa5ade7-9389-4844-87eb-72a28c18610c.png"
                 alt="Chambre"
                 className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
               />
@@ -64,7 +64,7 @@ const Spaces = () => {
               Chambre
             </h3>
             <p className="text-wood-dark/80 mb-4">
-              Une chambre confortable avec vue sur les montagnes.
+              Une chambre confortable avec vue sur les montagnes
             </p>
           </motion.div>
 
@@ -77,7 +77,7 @@ const Spaces = () => {
           >
             <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
               <img
-                src="/lovable-uploads/another-image-2.png"
+                src="/lovable-uploads/0ce6cff6-6aba-49e0-9e8a-45515a175135.png"
                 alt="Salle de bain"
                 className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
               />
@@ -87,7 +87,7 @@ const Spaces = () => {
               Salle de bain
             </h3>
             <p className="text-wood-dark/80 mb-4">
-              Salle de bain moderne avec toutes les commodités.
+              Salle de bain moderne avec toutes les commodités
             </p>
           </motion.div>
         </div>
