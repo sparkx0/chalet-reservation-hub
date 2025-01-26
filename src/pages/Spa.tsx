@@ -33,7 +33,7 @@ const Spa = () => {
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <img
-                    src="/lovable-uploads/0ce6cff6-6aba-49e0-9e8a-45515a175135.png"
+                    src="/lovable-uploads/1fa5ade7-9389-4844-87eb-72a28c18610c.png"
                     alt="Piscine chauffée"
                     className="rounded-lg w-full h-64 object-cover"
                   />
