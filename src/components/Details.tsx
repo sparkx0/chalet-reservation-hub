@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bed, Users, Bath, Wifi, Car, Snowflake, Pool, Dumbbell, Flame } from "lucide-react";
+import { Bed, Users, Bath, Wifi, Car, Snowflake, Waves, Dumbbell, Flame } from "lucide-react";
 
 const Details = () => {
   const amenities = [
@@ -19,7 +19,7 @@ const Details = () => {
       description: "Salon 120m² · Cuisine équipée",
     },
     {
-      icon: <Pool className="w-6 h-6" />,
+      icon: <Waves className="w-6 h-6" />,
       title: "Piscine chauffée",
       description: "Accessible toute l'année",
     },
