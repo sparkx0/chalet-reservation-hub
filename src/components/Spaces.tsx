@@ -38,7 +38,7 @@ const Spaces = () => {
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
             </div>
             <h3 className="text-2xl font-serif mt-4 mb-2 text-wood-dark">
-              Salon-Séjour
+              Le chalet du Salève
             </h3>
             <p className="text-wood-dark/80 mb-4">
               Chalet d'exception niché à 970 mètres d'altitude vue sur les Alpes
