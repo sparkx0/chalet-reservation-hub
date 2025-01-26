@@ -20,7 +20,6 @@ const Navigation = () => {
   const scrollToSection = (sectionId: string) => {
     if (location.pathname !== "/") {
       navigate("/");
-      // Attendons que la navigation soit terminée avant de scroller
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -75,6 +74,14 @@ const Navigation = () => {
                 }`}
               >
                 Activités
+              </Link>
+              <Link
+                to="/spa"
+                className={`text-wood-dark hover:text-wood transition-colors font-serif ${
+                  location.pathname === "/spa" ? "text-wood" : ""
+                }`}
+              >
+                Spa & Bien-être
               </Link>
               <Link
                 to="/contact"
