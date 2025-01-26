@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
-import { Instagram, Facebook, Youtube, BrandTiktok } from "lucide-react";
+import { Instagram, Facebook, Youtube } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,11 +18,20 @@ const Navigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    } else if (location.pathname !== "/") {
-      window.location.href = `/#${sectionId}`;
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Attendons que la navigation soit terminée avant de scroller
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -91,14 +101,6 @@ const Navigation = () => {
                 className="text-wood-dark hover:text-wood transition-colors"
               >
                 <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.tiktok.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-wood-dark hover:text-wood transition-colors"
-              >
-                <BrandTiktok className="w-5 h-5" />
               </a>
               <a
                 href="https://www.youtube.com"
