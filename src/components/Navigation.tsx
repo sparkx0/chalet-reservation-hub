@@ -30,12 +30,20 @@ const Navigation = () => {
           </Link>
           <div className="hidden md:flex gap-8">
             <Link
-              to="/activites"
+              to="/activities"
               className={`text-wood-dark hover:text-wood transition-colors font-serif ${
-                location.pathname === "/activites" ? "text-wood" : ""
+                location.pathname === "/activities" ? "text-wood" : ""
               }`}
             >
               Activités
+            </Link>
+            <Link
+              to="/contact"
+              className={`text-wood-dark hover:text-wood transition-colors font-serif ${
+                location.pathname === "/contact" ? "text-wood" : ""
+              }`}
+            >
+              Contact
             </Link>
             <a
               href="#espaces"
