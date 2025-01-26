@@ -130,10 +130,10 @@ const Spaces = () => {
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
             </div>
             <h3 className="text-2xl font-serif mt-4 mb-2 text-wood-dark">
-              Salle de sport
+              Chambres
             </h3>
             <p className="text-wood-dark/80 mb-4">
-              Une salle de sport équipée pour maintenir votre forme pendant votre séjour
+              7 chambres luxueuses avec vue sur les montagnes, pouvant accueillir jusqu'à 14 personnes
             </p>
           </motion.div>
         </div>
