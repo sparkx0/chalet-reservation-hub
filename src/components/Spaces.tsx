@@ -1,22 +1,6 @@
 import { motion } from "framer-motion";
-
-const spaces = [
-  {
-    title: "Salon-Séjour",
-    description: "Espace de vie de 120m² avec cheminée traditionnelle",
-    image: "/lovable-uploads/a0abb74c-40ab-46eb-98b4-1744434757a9.png",
-  },
-  {
-    title: "Chambres",
-    description: "7 chambres au charme authentique",
-    image: "/lovable-uploads/d7bfbf16-f70b-4310-8b52-e8e1798c2a04.png",
-  },
-  {
-    title: "Vue Panoramique",
-    description: "Vue exceptionnelle sur le massif des Alpes",
-    image: "/lovable-uploads/0ce6cff6-6aba-49e0-9e8a-45515a175135.png",
-  },
-];
+import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const Spaces = () => {
   return (
@@ -25,47 +9,105 @@ const Spaces = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-serif text-wood-dark mb-6">
-            Un lieu d'exception
+          <h2 className="text-4xl md:text-5xl font-serif mb-6 text-wood-dark">
+            Les Espaces
           </h2>
-          <p className="text-stone-dark max-w-2xl mx-auto text-lg">
-            Découvrez les espaces de vie de notre chalet, où tradition et confort moderne se rencontrent
+          <p className="text-lg text-wood-dark/80 max-w-2xl mx-auto">
+            Découvrez nos espaces conçus pour votre confort et votre bien-être
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {spaces.map((space, index) => (
-            <motion.div
-              key={space.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-xl shadow-xl aspect-[4/5]"
-            >
-              <div className="absolute inset-0">
-                <img
-                  src={space.image}
-                  alt={space.title}
-                  className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-              </div>
-              <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                <h3 className="text-2xl font-serif mb-3 transform group-hover:translate-y-0 transition-transform duration-300">
-                  {space.title}
-                </h3>
-                <p className="text-snow-light transform group-hover:translate-y-0 transition-transform duration-300">
-                  {space.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="group"
+          >
+            <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
+              <img
+                src="/lovable-uploads/37aa1fba-d804-4af0-b331-1dbeb3db8939.png"
+                alt="Salon-séjour du chalet"
+                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+            </div>
+            <h3 className="text-2xl font-serif mt-4 mb-2 text-wood-dark">
+              Salon-Séjour
+            </h3>
+            <p className="text-wood-dark/80 mb-4">
+              Chalet d'exception niché à 970 mètres d'altitude vue sur les Alpes
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="group"
+          >
+            <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
+              <img
+                src="/lovable-uploads/another-image.png"
+                alt="Chambre"
+                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+            </div>
+            <h3 className="text-2xl font-serif mt-4 mb-2 text-wood-dark">
+              Chambre
+            </h3>
+            <p className="text-wood-dark/80 mb-4">
+              Une chambre confortable avec vue sur les montagnes.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="group"
+          >
+            <div className="relative overflow-hidden rounded-lg aspect-[4/3]">
+              <img
+                src="/lovable-uploads/another-image-2.png"
+                alt="Salle de bain"
+                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+            </div>
+            <h3 className="text-2xl font-serif mt-4 mb-2 text-wood-dark">
+              Salle de bain
+            </h3>
+            <p className="text-wood-dark/80 mb-4">
+              Salle de bain moderne avec toutes les commodités.
+            </p>
+          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center mt-16"
+        >
+          <Link to="/spa">
+            <Button
+              variant="outline"
+              className="bg-transparent border-2 border-wood text-wood hover:bg-wood hover:text-white transition-colors duration-300"
+            >
+              Découvrir tous nos espaces
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
