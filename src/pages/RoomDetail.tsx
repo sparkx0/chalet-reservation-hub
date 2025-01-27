@@ -6,7 +6,20 @@ import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
-import { Bed, Users, Bath, Maximize2 } from "lucide-react";
+import { Bed, Users, Bath, Maximize2, Image, CreditCard } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const RoomDetail = () => {
   const { id } = useParams();
@@ -35,89 +48,112 @@ const RoomDetail = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-6xl mx-auto"
+            className="max-w-7xl mx-auto"
           >
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="grid md:grid-cols-2 gap-8 p-8">
+                {/* Image Carousel Section */}
                 <div className="space-y-6">
-                  <h1 className="text-4xl font-serif text-wood-dark">{room.name}</h1>
-                  <p className="text-lg text-stone-dark">{room.description}</p>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center gap-2 text-wood-dark">
-                      <Bed className="w-5 h-5" />
-                      <span>Lit King Size</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-wood-dark">
-                      <Users className="w-5 h-5" />
-                      <span>2-3 personnes</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-wood-dark">
-                      <Bath className="w-5 h-5" />
-                      <span>Salle de bain privée</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-wood-dark">
-                      <Maximize2 className="w-5 h-5" />
-                      <span>{room.superficie} m²</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h2 className="text-2xl font-serif text-wood-dark">Confort & Équipements</h2>
-                    <ul className="list-disc list-inside space-y-2 text-stone-dark">
-                      <li>Literie haut de gamme avec surmatelas</li>
-                      <li>Mobilier en bois massif fait main</li>
-                      <li>Smart TV 4K 55 pouces</li>
-                      <li>Climatisation réversible</li>
-                      <li>Mini-bar</li>
-                      <li>Coffre-fort</li>
-                    </ul>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h2 className="text-2xl font-serif text-wood-dark">Salle de bain</h2>
-                    <ul className="list-disc list-inside space-y-2 text-stone-dark">
-                      <li>Douche à l'italienne</li>
-                      <li>Double vasque</li>
-                      <li>Sèche-serviettes</li>
-                      <li>Produits d'accueil bio</li>
-                    </ul>
-                  </div>
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {additionalImages.map((image, index) => (
+                        <CarouselItem key={index}>
+                          <div
+                            className="relative aspect-[4/3] cursor-pointer"
+                            onClick={() => setSelectedImage(image)}
+                          >
+                            <img
+                              src={image}
+                              alt={`Vue ${index + 1} de ${room.name}`}
+                              className="object-cover w-full h-full rounded-lg"
+                            />
+                            <div className="absolute bottom-2 right-2 bg-black/50 text-white p-2 rounded-full">
+                              <Image size={20} />
+                            </div>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-2" />
+                    <CarouselNext className="right-2" />
+                  </Carousel>
                 </div>
 
+                {/* Room Details Section */}
                 <div className="space-y-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    {additionalImages.map((image, index) => (
-                      <div
-                        key={index}
-                        className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
-                        onClick={() => setSelectedImage(image)}
-                      >
-                        <img
-                          src={image}
-                          alt={`Vue ${index + 1} de ${room.name}`}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                    ))}
-                  </div>
+                  <div>
+                    <h1 className="text-4xl font-serif text-wood-dark mb-4">{room.name}</h1>
+                    <p className="text-lg text-stone-dark mb-6">{room.description}</p>
 
-                  <div className="bg-wood-light/10 rounded-lg p-6 space-y-4">
-                    <h2 className="text-2xl font-serif text-wood-dark">Réserver cette chambre</h2>
-                    <div className="flex justify-between items-center">
-                      <span className="text-xl font-semibold text-wood-dark">
-                        {room.price}€ / nuit
-                      </span>
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                      <div className="flex items-center gap-2 text-wood-dark">
+                        <Bed className="w-5 h-5" />
+                        <span>Lit King Size</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-wood-dark">
+                        <Users className="w-5 h-5" />
+                        <span>2-3 personnes</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-wood-dark">
+                        <Bath className="w-5 h-5" />
+                        <span>Salle de bain privée</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-wood-dark">
+                        <Maximize2 className="w-5 h-5" />
+                        <span>{room.superficie} m²</span>
+                      </div>
                     </div>
-                    <Calendar
-                      mode="single"
-                      selected={date}
-                      onSelect={setDate}
-                      className="rounded-md border"
-                    />
-                    <Button className="w-full bg-wood hover:bg-wood-dark text-white">
-                      Réserver maintenant
-                    </Button>
+
+                    <Accordion type="single" collapsible className="mb-6">
+                      <AccordionItem value="rules">
+                        <AccordionTrigger className="text-xl font-serif text-wood-dark">
+                          Règles de la maison
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <ul className="space-y-3 text-stone-dark">
+                            <li>• Arrivée : 15h00 / Départ : 11h00</li>
+                            <li>• Lit enfant disponible sur demande</li>
+                            <li>• Les fêtes/événements ne sont pas autorisés</li>
+                            <li className="mt-4">Cartes bancaires acceptées :</li>
+                            <li className="flex gap-4">
+                              <CreditCard className="text-wood-dark" />
+                              <span>Visa, Mastercard, American Express, Maestro</span>
+                            </li>
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+
+                      <AccordionItem value="info">
+                        <AccordionTrigger className="text-xl font-serif text-wood-dark">
+                          À savoir
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="space-y-3 text-stone-dark">
+                            <p>Veuillez informer l'établissement Le chalet du Salève à l'avance de l'heure à laquelle vous prévoyez d'arriver. Vous pouvez indiquer cette information dans la rubrique « Demandes spéciales » lors de la réservation ou contacter directement l'établissement.</p>
+                            <p>Les enterrements de vie de célibataire et autres fêtes de ce type sont interdits dans cet établissement.</p>
+                            <p>Les clients âgés de moins de 18 ans doivent être accompagnés d'un parent ou d'un tuteur légal pour pouvoir s'enregistrer.</p>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+
+                    <div className="bg-wood-light/10 rounded-lg p-6 space-y-4">
+                      <h2 className="text-2xl font-serif text-wood-dark">Réserver cette chambre</h2>
+                      <div className="flex justify-between items-center">
+                        <span className="text-xl font-semibold text-wood-dark">
+                          {room.price}€ / nuit
+                        </span>
+                      </div>
+                      <Calendar
+                        mode="single"
+                        selected={date}
+                        onSelect={setDate}
+                        className="rounded-md border"
+                      />
+                      <Button className="w-full bg-wood hover:bg-wood-dark text-white">
+                        Réserver maintenant
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
