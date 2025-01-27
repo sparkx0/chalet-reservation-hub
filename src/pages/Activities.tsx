@@ -10,7 +10,7 @@ const Activities = () => {
     <div className="min-h-screen bg-snow">
       <Navigation />
       <ActivityHero />
-      <div className="pb-16">
+      <div className="mb-16">
         <ActivityHighlights />
         <SeasonalActivities />
         <LocalAttractions />
