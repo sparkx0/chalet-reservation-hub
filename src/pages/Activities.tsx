@@ -10,10 +10,12 @@ const Activities = () => {
     <div className="min-h-screen bg-snow">
       <Navigation />
       <ActivityHero />
-      <ActivityHighlights />
-      <SeasonalActivities />
-      <LocalAttractions />
-      <Reviews />
+      <div className="pb-16">
+        <ActivityHighlights />
+        <SeasonalActivities />
+        <LocalAttractions />
+        <Reviews />
+      </div>
     </div>
   );
 };
