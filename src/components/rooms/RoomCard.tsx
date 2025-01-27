@@ -2,12 +2,15 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Room } from "./roomsData";
 import { Wifi, Tv, Wind, Droplets, Scale, Maximize2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 interface RoomCardProps {
   room: Room;
 }
 
 const RoomCard = ({ room }: RoomCardProps) => {
+  const navigate = useNavigate();
+  
   const amenityIcons = {
     wifi: <Wifi className="w-4 h-4" />,
     tv: <Tv className="w-4 h-4" />,
@@ -18,7 +21,10 @@ const RoomCard = ({ room }: RoomCardProps) => {
   };
 
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <Card 
+      className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+      onClick={() => navigate(`/rooms/${room.id}`)}
+    >
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={room.image}

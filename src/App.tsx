@@ -8,6 +8,7 @@ import Activities from "./pages/Activities";
 import Contact from "./pages/Contact";
 import Spa from "./pages/Spa";
 import Rooms from "./pages/Rooms";
+import RoomDetail from "./pages/RoomDetail";
 import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/spa" element={<Spa />} />
               <Route path="/rooms" element={<Rooms />} />
+              <Route path="/rooms/:id" element={<RoomDetail />} />
             </Routes>
           </div>
           <Footer />
