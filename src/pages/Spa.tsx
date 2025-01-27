@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
+import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Waves, Ruler, Dumbbell, Flame } from "lucide-react";
-import Navigation from "@/components/Navigation";
 
 const Spa = () => {
   return (
-    <>
+    <div className="min-h-screen bg-snow">
       <Navigation />
-      <div className="min-h-screen bg-snow pt-24">
-        <div className="container mx-auto px-4 pb-16">
+      <div className="pt-32 pb-16">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ const Spa = () => {
           </motion.div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
