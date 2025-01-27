@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { format } from "date-fns";
 
 const timezones = [
+  { name: "Genève", timezone: "Europe/Zurich" },
   { name: "Paris", timezone: "Europe/Paris" },
-  { name: "New York", timezone: "America/New_York" },
-  { name: "Tokyo", timezone: "Asia/Tokyo" },
+  { name: "Londres", timezone: "Europe/London" },
 ];
 
 const WorldClock = () => {
