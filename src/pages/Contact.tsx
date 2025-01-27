@@ -6,12 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Calendar, MapPin } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
-const CHALET_LOCATION = {
-  lat: 46.0897,
-  lng: 6.1294
-};
+import Map from "@/components/Map";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -27,7 +22,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Envoyer l'email aux adresses spécifiées
     toast({
       title: "Message envoyé !",
       description: "Nous vous répondrons dans les plus brefs délais.",
@@ -50,9 +44,14 @@ const Contact = () => {
               <h1 className="text-4xl md:text-5xl font-serif text-wood-dark mb-6">
                 Contactez-nous
               </h1>
-              <div className="flex items-center justify-center gap-2 text-wood">
-                <Mail className="w-6 h-6" />
-                <span className="text-lg">Planifiez votre séjour de rêve</span>
+              <div className="flex flex-col items-center justify-center gap-2 text-wood">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-6 h-6" />
+                  <span className="text-lg">Planifiez votre séjour de rêve</span>
+                </div>
+                <p className="text-wood-dark/80">
+                  Route du Salève, 74350 LE SAPPEY
+                </p>
               </div>
             </div>
 
@@ -137,7 +136,10 @@ const Contact = () => {
                       className="min-h-[100px]"
                       value={formData.specialRequests}
                       onChange={(e) =>
-                        setFormData({ ...formData, specialRequests: e.target.value })
+                        setFormData({
+                          ...formData,
+                          specialRequests: e.target.value,
+                        })
                       }
                     />
                   </div>
@@ -153,26 +155,19 @@ const Contact = () => {
 
               <div className="space-y-8">
                 <div className="bg-white rounded-lg shadow-xl p-8">
-                  <h2 className="text-2xl font-serif text-wood-dark mb-4">Notre adresse</h2>
+                  <h2 className="text-2xl font-serif text-wood-dark mb-4">
+                    Notre adresse
+                  </h2>
                   <div className="flex items-start gap-3 text-wood-dark/80 mb-6">
                     <MapPin className="w-5 h-5 mt-1" />
                     <p>
                       Le Chalet du Salève<br />
-                      LE SAPPEY 74350<br />
+                      Route du Salève<br />
+                      74350 LE SAPPEY<br />
                       Haute-Savoie, FRANCE
                     </p>
                   </div>
-                  <div className="h-[400px] rounded-lg overflow-hidden">
-                    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
-                      <GoogleMap
-                        mapContainerStyle={{ width: "100%", height: "100%" }}
-                        center={CHALET_LOCATION}
-                        zoom={15}
-                      >
-                        <Marker position={CHALET_LOCATION} />
-                      </GoogleMap>
-                    </LoadScript>
-                  </div>
+                  <Map />
                 </div>
               </div>
             </div>
