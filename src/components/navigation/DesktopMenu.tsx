@@ -11,12 +11,14 @@ export const DesktopMenu = ({ scrollToSection }: DesktopMenuProps) => {
   return (
     <div className="hidden md:flex items-center gap-8">
       <div className="hidden md:flex gap-8">
-        <button
-          onClick={() => scrollToSection("details")}
-          className="text-wood-dark hover:text-wood transition-colors font-serif"
+        <Link
+          to="/chalet-history"
+          className={`text-wood-dark hover:text-wood transition-colors font-serif ${
+            location.pathname === "/chalet-history" ? "text-wood" : ""
+          }`}
         >
           Le Chalet
-        </button>
+        </Link>
         <Link
           to="/rooms"
           className={`text-wood-dark hover:text-wood transition-colors font-serif ${

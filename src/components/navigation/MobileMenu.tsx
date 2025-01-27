@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Youtube } from "lucide-react";
 import { SocialLinks } from "./SocialLinks";
 
 interface MobileMenuProps {
@@ -17,12 +16,12 @@ export const MobileMenu = ({
         isMobileMenuOpen ? "flex" : "hidden"
       } md:hidden fixed inset-0 bg-white flex-col items-center justify-center space-y-8 pt-20`}
     >
-      <button
-        onClick={() => scrollToSection("details")}
+      <Link
+        to="/chalet-history"
         className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
       >
         Le Chalet
-      </button>
+      </Link>
       <Link
         to="/rooms"
         className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"

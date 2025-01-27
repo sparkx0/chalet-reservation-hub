@@ -10,6 +10,7 @@ import Spa from "./pages/Spa";
 import Rooms from "./pages/Rooms";
 import RoomDetail from "./pages/RoomDetail";
 import Events from "./pages/Events";
+import ChaletHistory from "./pages/ChaletHistory";
 import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
               <Route path="/rooms" element={<Rooms />} />
               <Route path="/rooms/:id" element={<RoomDetail />} />
               <Route path="/events" element={<Events />} />
+              <Route path="/chalet-history" element={<ChaletHistory />} />
             </Routes>
           </div>
           <Footer />
