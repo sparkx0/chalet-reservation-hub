@@ -101,6 +101,12 @@ const Navigation = () => {
               Spa & Bien-être
             </Link>
             <Link
+              to="/events"
+              className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
+            >
+              Événements
+            </Link>
+            <Link
               to="/contact"
               className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
             >
@@ -178,6 +184,14 @@ const Navigation = () => {
                 }`}
               >
                 Spa & Bien-être
+              </Link>
+              <Link
+                to="/events"
+                className={`text-wood-dark hover:text-wood transition-colors font-serif ${
+                  location.pathname === "/events" ? "text-wood" : ""
+                }`}
+              >
+                Événements
               </Link>
               <Link
                 to="/contact"
