@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Activities from "./pages/Activities";
 import Contact from "./pages/Contact";
 import Spa from "./pages/Spa";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -16,12 +17,17 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/activities" element={<Activities />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/spa" element={<Spa />} />
-        </Routes>
+        <div className="flex flex-col min-h-screen">
+          <div className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/activities" element={<Activities />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/spa" element={<Spa />} />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
