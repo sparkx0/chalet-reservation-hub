@@ -54,7 +54,6 @@ const Navigation = () => {
             <Logo />
           </Link>
 
-          {/* Mobile menu button */}
           <button
             onClick={toggleMobileMenu}
             className="md:hidden text-wood-dark hover:text-wood z-50"
@@ -62,7 +61,6 @@ const Navigation = () => {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Mobile menu */}
           <div
             className={`${
               isMobileMenuOpen ? "flex" : "hidden"
@@ -80,6 +78,12 @@ const Navigation = () => {
             >
               Le Chalet
             </button>
+            <Link
+              to="/rooms"
+              className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
+            >
+              Chambres
+            </Link>
             <button
               onClick={() => scrollToSection("reservation")}
               className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
@@ -133,7 +137,6 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Desktop menu */}
           <div className="hidden md:flex items-center gap-8">
             <div className="hidden md:flex gap-8">
               <button
@@ -148,6 +151,14 @@ const Navigation = () => {
               >
                 Le Chalet
               </button>
+              <Link
+                to="/rooms"
+                className={`text-wood-dark hover:text-wood transition-colors font-serif ${
+                  location.pathname === "/rooms" ? "text-wood" : ""
+                }`}
+              >
+                Chambres
+              </Link>
               <button
                 onClick={() => scrollToSection("reservation")}
                 className="text-wood-dark hover:text-wood transition-colors font-serif"

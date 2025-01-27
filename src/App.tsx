@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Activities from "./pages/Activities";
 import Contact from "./pages/Contact";
 import Spa from "./pages/Spa";
+import Rooms from "./pages/Rooms";
 import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
               <Route path="/activities" element={<Activities />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/spa" element={<Spa />} />
+              <Route path="/rooms" element={<Rooms />} />
             </Routes>
           </div>
           <Footer />
