@@ -4,8 +4,14 @@ import Navigation from "@/components/Navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Calendar } from "lucide-react";
+import { Mail, Calendar, MapPin } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+
+const CHALET_LOCATION = {
+  lat: 46.0897,
+  lng: 6.1294
+};
 
 const Contact = () => {
   const { toast } = useToast();
@@ -16,10 +22,12 @@ const Contact = () => {
     eventDate: "",
     eventType: "",
     description: "",
+    specialRequests: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Envoyer l'email aux adresses spécifiées
     toast({
       title: "Message envoyé !",
       description: "Nous vous répondrons dans les plus brefs délais.",
@@ -36,7 +44,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-serif text-wood-dark mb-6">
@@ -48,98 +56,125 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-xl p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Nom complet</Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Téléphone</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
-                      }
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="eventDate">Date souhaitée</Label>
-                    <div className="relative">
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-white rounded-lg shadow-xl p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Nom complet</Label>
                       <Input
-                        id="eventDate"
-                        type="date"
-                        value={formData.eventDate}
+                        id="name"
+                        value={formData.name}
                         onChange={(e) =>
-                          setFormData({ ...formData, eventDate: e.target.value })
+                          setFormData({ ...formData, name: e.target.value })
                         }
                         required
                       />
-                      <Calendar className="absolute right-3 top-2.5 h-5 w-5 text-stone" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        required
+                      />
                     </div>
                   </div>
-                </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="eventType">Type d'événement</Label>
-                  <Input
-                    id="eventType"
-                    placeholder="Ex: Séjour en famille, Anniversaire, etc."
-                    value={formData.eventType}
-                    onChange={(e) =>
-                      setFormData({ ...formData, eventType: e.target.value })
-                    }
-                    required
-                  />
-                </div>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Téléphone</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="eventDate">Date souhaitée</Label>
+                      <div className="relative">
+                        <Input
+                          id="eventDate"
+                          type="date"
+                          value={formData.eventDate}
+                          onChange={(e) =>
+                            setFormData({ ...formData, eventDate: e.target.value })
+                          }
+                          required
+                        />
+                        <Calendar className="absolute right-3 top-2.5 h-5 w-5 text-stone" />
+                      </div>
+                    </div>
+                  </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="description">Description de votre projet</Label>
-                  <Textarea
-                    id="description"
-                    placeholder="Décrivez-nous votre projet de séjour..."
-                    className="min-h-[150px]"
-                    value={formData.description}
-                    onChange={(e) =>
-                      setFormData({ ...formData, description: e.target.value })
-                    }
-                    required
-                  />
-                </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="description">Message</Label>
+                    <Textarea
+                      id="description"
+                      placeholder="Décrivez-nous votre projet de séjour..."
+                      className="min-h-[150px]"
+                      value={formData.description}
+                      onChange={(e) =>
+                        setFormData({ ...formData, description: e.target.value })
+                      }
+                      required
+                    />
+                  </div>
 
-                <button
-                  type="submit"
-                  className="w-full bg-wood hover:bg-wood-dark text-white py-3 rounded-lg transition-colors duration-300"
-                >
-                  Envoyer
-                </button>
-              </form>
+                  <div className="space-y-2">
+                    <Label htmlFor="specialRequests">Demandes spéciales</Label>
+                    <Textarea
+                      id="specialRequests"
+                      placeholder="Avez-vous des demandes particulières ?"
+                      className="min-h-[100px]"
+                      value={formData.specialRequests}
+                      onChange={(e) =>
+                        setFormData({ ...formData, specialRequests: e.target.value })
+                      }
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-wood hover:bg-wood-dark text-white py-3 rounded-lg transition-colors duration-300"
+                  >
+                    Envoyer
+                  </button>
+                </form>
+              </div>
+
+              <div className="space-y-8">
+                <div className="bg-white rounded-lg shadow-xl p-8">
+                  <h2 className="text-2xl font-serif text-wood-dark mb-4">Notre adresse</h2>
+                  <div className="flex items-start gap-3 text-wood-dark/80 mb-6">
+                    <MapPin className="w-5 h-5 mt-1" />
+                    <p>
+                      Le Chalet du Salève<br />
+                      LE SAPPEY 74350<br />
+                      Haute-Savoie, FRANCE
+                    </p>
+                  </div>
+                  <div className="h-[400px] rounded-lg overflow-hidden">
+                    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+                      <GoogleMap
+                        mapContainerStyle={{ width: "100%", height: "100%" }}
+                        center={CHALET_LOCATION}
+                        zoom={15}
+                      >
+                        <Marker position={CHALET_LOCATION} />
+                      </GoogleMap>
+                    </LoadScript>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

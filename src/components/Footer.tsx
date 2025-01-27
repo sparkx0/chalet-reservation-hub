@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import Logo from "./Logo";
+import WorldClock from "./WorldClock";
 
 const Footer = () => {
   return (
     <footer className="bg-wood-light/10 border-t border-wood/10">
+      <WorldClock />
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
