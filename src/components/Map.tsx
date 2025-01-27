@@ -10,7 +10,7 @@ const Map = () => {
     if (!mapContainer.current) return;
 
     // Initialize map
-    mapboxgl.accessToken = 'VOTRE_CLE_MAPBOX';
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGUtY2hhbGV0LWR1LXNhbGV2ZSIsImEiOiJjbTZmZG9vcjkwNGRyMmpzZXU2NmN2cHZtIn0.0JhTWXa8Vo0bhQFyvmm0tQ';
     
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -38,8 +38,8 @@ const Map = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-full">
-      <div ref={mapContainer} className="absolute inset-0" />
+    <div className="relative w-full h-[400px]">
+      <div ref={mapContainer} className="absolute inset-0 rounded-lg shadow-lg" />
     </div>
   );
 };
