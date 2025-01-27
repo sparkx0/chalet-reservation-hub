@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="space-y-4">
-            <Logo />
+            <Logo variant="footer" />
             <p className="text-wood-dark/80 text-sm">
               Un chalet d'exception au cœur des Alpes, offrant une expérience unique de luxe et de bien-être.
             </p>
