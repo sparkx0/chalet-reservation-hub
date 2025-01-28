@@ -24,7 +24,7 @@ export const rooms: Room[] = [
     description: "Suite idéale pour les familles avec deux chambres séparées et un salon commun.",
     price: 420,
     superficie: 55,
-    image: "/lovable-uploads/1fa5ade7-9389-4844-87eb-72a28c18610c.png",
+    image: "/lovable-uploads/2143be96-8145-4f73-8bda-48b58252f139.png",
     amenities: ["wifi", "tv", "climatisation", "sechecheveux", "pesepersonne", "superficie"],
   },
   {
