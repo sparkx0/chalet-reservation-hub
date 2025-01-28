@@ -42,7 +42,7 @@ export const rooms: Room[] = [
     description: "Suite luxueuse avec salon séparé et jacuzzi privatif.",
     price: 520,
     superficie: 65,
-    image: "/lovable-uploads/4d342c91-ceb6-4141-a701-6f69d7172cd8.png",
+    image: "/lovable-uploads/146dd9c2-c0d3-4301-b359-cf35214e6f92.png",
     amenities: ["wifi", "tv", "climatisation", "sechecheveux", "pesepersonne", "superficie"],
   },
   {
