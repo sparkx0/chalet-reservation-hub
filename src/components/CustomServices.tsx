@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Chef, Car, Massage, Mountain } from "lucide-react";
+import { Utensils, Car, Heart, Compass } from "lucide-react";
 import { Button } from "./ui/button";
 import { useToast } from "./ui/use-toast";
 
 const services = [
   {
-    icon: <Chef className="w-8 h-8" />,
+    icon: <Utensils className="w-8 h-8" />,
     title: "Chef Privé",
     description: "Profitez d'une expérience gastronomique unique avec notre chef étoilé",
     price: "À partir de 150€/repas"
@@ -17,13 +17,13 @@ const services = [
     price: "À partir de 80€/trajet"
   },
   {
-    icon: <Massage className="w-8 h-8" />,
+    icon: <Heart className="w-8 h-8" />,
     title: "Massage à Domicile",
     description: "Détente et bien-être dans le confort de votre chambre",
     price: "À partir de 90€/heure"
   },
   {
-    icon: <Mountain className="w-8 h-8" />,
+    icon: <Compass className="w-8 h-8" />,
     title: "Guide de Montagne",
     description: "Excursions privées et découverte des plus beaux sentiers",
     price: "À partir de 120€/demi-journée"
