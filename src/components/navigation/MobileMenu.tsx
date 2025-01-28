@@ -16,6 +16,12 @@ export const MobileMenu = ({
         isMobileMenuOpen ? "flex" : "hidden"
       } md:hidden fixed inset-0 bg-white flex-col items-center justify-center space-y-8 pt-20`}
     >
+      <button
+        onClick={() => scrollToSection("reservation")}
+        className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
+      >
+        Accueil
+      </button>
       <Link
         to="/chalet-history"
         className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
@@ -28,12 +34,6 @@ export const MobileMenu = ({
       >
         Chambres
       </Link>
-      <button
-        onClick={() => scrollToSection("reservation")}
-        className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
-      >
-        Réserver
-      </button>
       <Link
         to="/activities"
         className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
@@ -45,12 +45,6 @@ export const MobileMenu = ({
         className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
       >
         Spa & Bien-être
-      </Link>
-      <Link
-        to="/private-pool"
-        className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
-      >
-        Location Privative
       </Link>
       <Link
         to="/events"

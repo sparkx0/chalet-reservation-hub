@@ -11,6 +11,12 @@ export const DesktopMenu = ({ scrollToSection }: DesktopMenuProps) => {
   return (
     <div className="hidden md:flex items-center gap-8">
       <div className="hidden md:flex gap-8">
+        <button
+          onClick={() => scrollToSection("reservation")}
+          className="text-wood-dark hover:text-wood transition-colors font-serif"
+        >
+          Accueil
+        </button>
         <Link
           to="/chalet-history"
           className={`text-wood-dark hover:text-wood transition-colors font-serif ${
@@ -27,12 +33,6 @@ export const DesktopMenu = ({ scrollToSection }: DesktopMenuProps) => {
         >
           Chambres
         </Link>
-        <button
-          onClick={() => scrollToSection("reservation")}
-          className="text-wood-dark hover:text-wood transition-colors font-serif"
-        >
-          Réserver
-        </button>
         <Link
           to="/activities"
           className={`text-wood-dark hover:text-wood transition-colors font-serif ${
@@ -48,14 +48,6 @@ export const DesktopMenu = ({ scrollToSection }: DesktopMenuProps) => {
           }`}
         >
           Spa & Bien-être
-        </Link>
-        <Link
-          to="/private-pool"
-          className={`text-wood-dark hover:text-wood transition-colors font-serif ${
-            location.pathname === "/private-pool" ? "text-wood" : ""
-          }`}
-        >
-          Location Privative
         </Link>
         <Link
           to="/events"
