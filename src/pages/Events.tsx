@@ -42,16 +42,7 @@ const Events = () => {
             <h2 className="text-4xl font-serif text-wood-dark text-center mb-12">
               Prochains Événements
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <EventCard
-                id="1"
-                title="Masterclass Boxe Anglaise"
-                date="15 Juin 2024"
-                image="/lovable-uploads/d54b9c6d-2275-4489-8397-f20b2175225e.png"
-                description="Une expérience unique avec le Champion du Monde WBC Nordine Oubaali"
-                price="2199€"
-                onSelect={() => navigate("/masterclass-boxe")}
-              />
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <EventCard
                 id="2"
                 title="Week-end Bien-être"
