@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Waves, Ruler, Dumbbell, Flame } from "lucide-react";
+import PrivateFeatures from "@/components/privatization/PrivateFeatures";
+import PrivateBooking from "@/components/privatization/PrivateBooking";
 
 const Spa = () => {
   return (
@@ -79,7 +81,7 @@ const Spa = () => {
             </Card>
 
             {/* Section Salle de Sport */}
-            <Card>
+            <Card className="mb-12">
               <CardHeader>
                 <CardTitle className="text-2xl font-serif text-wood-dark">
                   Salle de Sport
@@ -112,6 +114,24 @@ const Spa = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Section Location Privative */}
+            <div className="mt-16">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-4xl font-serif text-wood-dark text-center mb-8"
+              >
+                Location Privative de l'Espace Bien-être
+              </motion.h2>
+              <p className="text-center text-lg text-stone-dark mb-12">
+                Profitez de nos installations en toute intimité : piscine chauffée, sauna et salle de sport.
+              </p>
+            </div>
+
+            <PrivateFeatures />
+            <PrivateBooking />
           </motion.div>
         </div>
       </div>
