@@ -43,11 +43,11 @@ const Events = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <EventCard
                 id="1"
-                title="Soirée Gastronomique Alpine"
+                title="Masterclass Boxe Anglaise"
                 date="15 Juin 2024"
-                image="/lovable-uploads/0ce6cff6-6aba-49e0-9e8a-45515a175135.png"
-                description="Une expérience culinaire unique avec notre chef étoilé"
-                price="250€"
+                image="/lovable-uploads/d2c8ea04-bce7-4999-a91c-c30e452cf844.png"
+                description="Une expérience unique avec le Champion du Monde WBC Nordine Oubaali"
+                price="150€"
                 onSelect={() => setSelectedEvent("1")}
               />
               <EventCard
