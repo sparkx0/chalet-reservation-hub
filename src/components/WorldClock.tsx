@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
+import { formatInTimeZone } from 'date-fns-tz';
 
 const timezones = [
-  { name: "Genève", timezone: "Europe/Zurich" },
+  { name: "New York", timezone: "America/New_York" },
   { name: "Paris", timezone: "Europe/Paris" },
-  { name: "Londres", timezone: "Europe/London" },
+  { name: "Moscow", timezone: "Europe/Moscow" },
+  { name: "Hong Kong", timezone: "Asia/Hong_Kong" },
 ];
 
 const WorldClock = () => {
@@ -24,7 +26,7 @@ const WorldClock = () => {
         <div key={tz.timezone} className="text-center">
           <p className="text-sm text-wood-dark/80">{tz.name}</p>
           <p className="font-mono text-wood-dark">
-            {format(time, "HH:mm")}
+            {formatInTimeZone(time, tz.timezone, 'HH:mm')}
           </p>
         </div>
       ))}
