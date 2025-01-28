@@ -15,7 +15,7 @@ export const rooms: Room[] = [
     description: "Suite luxueuse avec vue panoramique sur les Alpes, lit king-size et espace salon privé.",
     price: 280,
     superficie: 35,
-    image: "/lovable-uploads/37aa1fba-d804-4af0-b331-1dbeb3db8939.png",
+    image: "/lovable-uploads/b389c2bf-ff3b-4f89-a42c-80a6a3aace7d.png",
     amenities: ["wifi", "tv", "climatisation", "sechecheveux", "pesepersonne", "superficie"],
   },
   {
