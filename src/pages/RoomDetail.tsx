@@ -32,7 +32,13 @@ const RoomDetail = () => {
     return <div>Chambre non trouvée</div>;
   }
 
-  const additionalImages = [
+  const additionalImages = room.id === 1 ? [
+    room.image,
+    "/lovable-uploads/7b4cfbe4-8fcd-4828-b1be-4fad01c2b109.png",
+    "/lovable-uploads/fb4cee1f-dafd-44dd-83ed-a077116ade8b.png",
+    "/lovable-uploads/77ef421e-0533-4aa0-880d-445f49706795.png",
+    "/lovable-uploads/82fa1c1d-0fd0-4eae-a8ed-9c87072ef7cc.png"
+  ] : [
     room.image,
     "/lovable-uploads/bathroom1.jpg",
     "/lovable-uploads/bathroom2.jpg",
