@@ -47,7 +47,7 @@ const Events = () => {
                 id="1"
                 title="Masterclass Boxe Anglaise"
                 date="15 Juin 2024"
-                image="/lovable-uploads/d2c8ea04-bce7-4999-a91c-c30e452cf844.png"
+                image="/lovable-uploads/d54b9c6d-2275-4489-8397-f20b2175225e.png"
                 description="Une expérience unique avec le Champion du Monde WBC Nordine Oubaali"
                 price="2199€"
                 onSelect={() => navigate("/masterclass-boxe")}
