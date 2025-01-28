@@ -66,7 +66,7 @@ const RetraiteSpirituelle = () => {
 
                 <div className="bg-wood/5 p-8 rounded-lg my-12">
                   <p className="text-lg leading-relaxed text-stone-dark italic">
-                    Pour la retraite annuelle, nos équipes ont tout mis en œuvre pour vous offrir une expérience qui vous changera comme l'école et l'université n'ont jamais pu le faire. Le concept de cette aventure est une expérience époustouflante combinant un lieu isolé au beau milieu du désert avec un programme d'enseignements et d'ateliers transformateurs.
+                    Pour la retraite annuelle, nos équipes ont tout mis en œuvre pour vous offrir une expérience qui vous changera comme l'école et l'université n'ont jamais pu le faire. Le concept de cette aventure est une expérience époustouflante combinant un lieu isolé au beau milieu des montagnes avec un programme d'enseignements et d'ateliers transformateurs.
                   </p>
                 </div>
 
