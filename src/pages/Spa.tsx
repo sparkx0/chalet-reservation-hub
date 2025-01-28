@@ -14,7 +14,30 @@ const Spa = () => {
   return (
     <div className="min-h-screen bg-snow">
       <Navigation />
-      <div className="pt-32 pb-16">
+      
+      {/* Hero Banner */}
+      <div className="relative h-[60vh] w-full">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+            alt="Spa et bien-être"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
+        <div className="relative h-full flex items-center justify-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl font-serif text-white text-center"
+          >
+            Spa & Bien-être
+          </motion.h1>
+        </div>
+      </div>
+
+      <div className="pt-16 pb-16">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -22,10 +45,6 @@ const Spa = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl font-serif text-wood-dark text-center mb-12">
-              Espace Bien-être
-            </h1>
-
             {/* Section Piscine */}
             <Card className="mb-12">
               <CardHeader>
