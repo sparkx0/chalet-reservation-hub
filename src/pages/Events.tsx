@@ -42,7 +42,16 @@ const Events = () => {
             <h2 className="text-4xl font-serif text-wood-dark text-center mb-12">
               Prochains Événements
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <EventCard
+                id="1"
+                title="Masterclass Exclusive avec Nordine Oubaali"
+                date="15 mars 2025"
+                image="/lovable-uploads/d54b9c6d-2275-4489-8397-f20b2175225e.png"
+                description="Une masterclass unique avec le Champion du Monde WBC de boxe anglaise"
+                price="2'199€"
+                onSelect={() => navigate("/masterclass-boxe")}
+              />
               <EventCard
                 id="2"
                 title="Week-end Bien-être"
