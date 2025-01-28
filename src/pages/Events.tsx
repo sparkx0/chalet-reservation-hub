@@ -69,15 +69,6 @@ const Events = () => {
                 price="1'499€"
                 onSelect={() => navigate("/retraite-spirituelle")}
               />
-              <EventCard
-                id="4"
-                title="Voyage en Forêt Spirituelle"
-                date="5-7 Août 2024"
-                image="/lovable-uploads/1472396961693-142e6e269027.jpg"
-                description="Une immersion méditative au cœur du Mont-Salève, entre forêt et montagne"
-                price="899€"
-                onSelect={() => navigate("/voyage-foret-spirituelle")}
-              />
             </div>
           </div>
         </section>
