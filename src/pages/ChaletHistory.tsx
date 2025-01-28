@@ -24,6 +24,30 @@ const ChaletHistory = () => {
       src: "/lovable-uploads/e648d43b-e0c4-443d-b120-43117be90e8e.png",
       alt: "Vue panoramique",
     },
+    {
+      src: "/lovable-uploads/5808f818-1c44-43d6-a424-b3a73e33b08a.png",
+      alt: "Vue depuis la terrasse",
+    },
+    {
+      src: "/lovable-uploads/c965e49e-b1eb-47c4-9e64-639dc8635dda.png",
+      alt: "Chalet sous la neige de nuit",
+    },
+    {
+      src: "/lovable-uploads/b7ea0037-cd29-47ab-b41b-f3cb21babe02.png",
+      alt: "Vue nocturne enneigée",
+    },
+    {
+      src: "/lovable-uploads/ae11aa12-1447-4550-a52e-f13e7f892f14.png",
+      alt: "Coucher de soleil hivernal",
+    },
+    {
+      src: "/lovable-uploads/682266fc-8a49-423b-a78f-d4c1ce08d9f5.png",
+      alt: "Lever de soleil sur les montagnes",
+    },
+    {
+      src: "/lovable-uploads/fa5b57de-15ea-4212-8624-906732b882d5.png",
+      alt: "Vue panoramique au coucher du soleil",
+    },
   ];
 
   return (
@@ -51,7 +75,7 @@ const ChaletHistory = () => {
               </section>
 
               <div className="mt-12 mb-16">
-                <Carousel className="w-full max-w-3xl mx-auto">
+                <Carousel className="w-full max-w-4xl mx-auto">
                   <CarouselContent>
                     {images.map((image, index) => (
                       <CarouselItem key={index}>
