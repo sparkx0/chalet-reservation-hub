@@ -33,7 +33,7 @@ export const rooms: Room[] = [
     description: "Chambre élégante avec balcon privé et vue sur la vallée.",
     price: 320,
     superficie: 40,
-    image: "/lovable-uploads/e648d43b-e0c4-443d-b120-43117be90e8e.png",
+    image: "/lovable-uploads/40f0594d-9330-4f60-a87b-0db2f3846b44.png",
     amenities: ["wifi", "tv", "climatisation", "sechecheveux", "pesepersonne", "superficie"],
   },
   {
