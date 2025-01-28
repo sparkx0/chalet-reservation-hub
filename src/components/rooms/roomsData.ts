@@ -11,11 +11,11 @@ export interface Room {
 export const rooms: Room[] = [
   {
     id: 1,
-    name: "Salève",
-    description: "Suite luxueuse avec vue panoramique sur les Alpes, lit king-size et espace salon privé.",
+    name: "La chambre Salève",
+    description: "Chambre chaleureuse sous les combles avec poutres apparentes, lit king-size et espace salon cosy. Vue sur le ciel par fenêtre de toit.",
     price: 280,
     superficie: 35,
-    image: "/lovable-uploads/photo-1469474968028-56623f02e42e.jpg",
+    image: "/lovable-uploads/1b847041-1b4e-4c52-a337-5543d3d27c8a.png",
     amenities: ["wifi", "tv", "climatisation", "sechecheveux", "pesepersonne", "superficie"],
   },
   {
