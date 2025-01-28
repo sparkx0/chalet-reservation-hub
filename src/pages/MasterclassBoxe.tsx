@@ -53,7 +53,9 @@ const MasterclassBoxe = () => {
                   Plongez dans l'univers de l'élite avec une opportunité exceptionnelle : une masterclass de coaching sportif animée par Nordine Oubaali, ancien champion du monde WBC de boxe anglaise et véritable icône du sport français.
                 </p>
 
-                <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">Pourquoi participer à
+                <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">
+                  Pourquoi participer à cette masterclass ?
+                </h2>
                 <div className="grid md:grid-cols-2 gap-8 my-8">
                   <div className="bg-white p-6 rounded-lg shadow-md">
                     <h3 className="text-xl font-serif text-wood-dark mb-4">Apprenez de l'un des meilleurs</h3>
