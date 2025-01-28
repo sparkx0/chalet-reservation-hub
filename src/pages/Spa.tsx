@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Waves, Ruler, Dumbbell, Flame } from "lucide-react";
+import { Waves, Ruler, Dumbbell, Flame, Heart } from "lucide-react";
 import PrivateFeatures from "@/components/privatization/PrivateFeatures";
 import PrivateBooking from "@/components/privatization/PrivateBooking";
 
 const Spa = () => {
+  // Scroll to top on component mount
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-snow">
       <Navigation />
@@ -72,11 +77,26 @@ const Spa = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-stone-dark">
-                  Profitez de notre sauna traditionnel pour un moment de pure détente. 
-                  Idéal pour la récupération après une journée de ski ou de randonnée, 
-                  le sauna vous aide à éliminer les tensions et à vous ressourcer.
-                </p>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <img
+                      src="/lovable-uploads/7fe3f31d-c5cc-4bf6-bac6-b6de3826c03d.png"
+                      alt="Espace méditation et détente"
+                      className="rounded-lg w-full h-64 object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-stone-dark mb-4">
+                      Profitez de notre sauna traditionnel pour un moment de pure détente. 
+                      Idéal pour la récupération après une journée de ski ou de randonnée, 
+                      le sauna vous aide à éliminer les tensions et à vous ressourcer.
+                    </p>
+                    <div className="flex items-center gap-2 text-wood">
+                      <Heart className="w-5 h-5" />
+                      <span>Température optimale pour votre bien-être</span>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
@@ -93,19 +113,29 @@ const Spa = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div>
+                  <div className="space-y-4">
                     <img
-                      src="/lovable-uploads/4d342c91-ceb6-4141-a701-6f69d7172cd8.png"
-                      alt="Salle de sport"
-                      className="rounded-lg w-full h-64 object-cover"
+                      src="/lovable-uploads/acfa66a1-1b13-4393-99ba-93a65a55c910.png"
+                      alt="Équipement de musculation"
+                      className="rounded-lg w-full h-48 object-cover mb-4"
+                    />
+                    <img
+                      src="/lovable-uploads/350cf7f3-24d1-4c00-9ee2-1d3417e87bd4.png"
+                      alt="Rack d'haltères"
+                      className="rounded-lg w-full h-48 object-cover"
                     />
                   </div>
-                  <div>
-                    <p className="text-stone-dark mb-4">
+                  <div className="space-y-4">
+                    <p className="text-stone-dark">
                       Notre salle de sport est équipée d'appareils professionnels pour maintenir 
                       votre routine fitness même en vacances. Des séances de coaching personnalisées 
                       sont disponibles sur réservation.
                     </p>
+                    <img
+                      src="/lovable-uploads/6ad30a73-102f-41b3-b76d-3dc03b019747.png"
+                      alt="Vestiaires"
+                      className="rounded-lg w-full h-48 object-cover"
+                    />
                     <p className="text-stone-dark">
                       Pour réserver une séance avec un coach, contactez-nous via notre formulaire 
                       de contact ou à la réception du chalet.
