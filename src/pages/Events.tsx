@@ -4,9 +4,11 @@ import EventCard from "@/components/events/EventCard";
 import EventGallery from "@/components/events/EventGallery";
 import EventBooking from "@/components/events/EventBooking";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-snow">
@@ -47,8 +49,8 @@ const Events = () => {
                 date="15 Juin 2024"
                 image="/lovable-uploads/d2c8ea04-bce7-4999-a91c-c30e452cf844.png"
                 description="Une expérience unique avec le Champion du Monde WBC Nordine Oubaali"
-                price="150€"
-                onSelect={() => setSelectedEvent("1")}
+                price="2199€"
+                onSelect={() => navigate("/masterclass-boxe")}
               />
               <EventCard
                 id="2"

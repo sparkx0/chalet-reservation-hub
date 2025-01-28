@@ -12,11 +12,11 @@ import Rooms from "./pages/Rooms";
 import RoomDetail from "./pages/RoomDetail";
 import Events from "./pages/Events";
 import ChaletHistory from "./pages/ChaletHistory";
+import MasterclassBoxe from "./pages/MasterclassBoxe";
 import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
-// Composant pour gérer le scroll vers le haut
 const ScrollToTop = () => {
   const location = useLocation();
 
@@ -41,6 +41,7 @@ const AppRoutes = () => {
           <Route path="/rooms/:id" element={<RoomDetail />} />
           <Route path="/events" element={<Events />} />
           <Route path="/chalet-history" element={<ChaletHistory />} />
+          <Route path="/masterclass-boxe" element={<MasterclassBoxe />} />
         </Routes>
       </div>
       <Footer />
