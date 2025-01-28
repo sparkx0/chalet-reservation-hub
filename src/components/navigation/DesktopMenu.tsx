@@ -50,6 +50,14 @@ export const DesktopMenu = ({ scrollToSection }: DesktopMenuProps) => {
           Spa & Bien-être
         </Link>
         <Link
+          to="/private-pool"
+          className={`text-wood-dark hover:text-wood transition-colors font-serif ${
+            location.pathname === "/private-pool" ? "text-wood" : ""
+          }`}
+        >
+          Location Privative
+        </Link>
+        <Link
           to="/events"
           className={`text-wood-dark hover:text-wood transition-colors font-serif ${
             location.pathname === "/events" ? "text-wood" : ""

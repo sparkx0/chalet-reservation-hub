@@ -47,6 +47,12 @@ export const MobileMenu = ({
         Spa & Bien-être
       </Link>
       <Link
+        to="/private-pool"
+        className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
+      >
+        Location Privative
+      </Link>
+      <Link
         to="/events"
         className="text-wood-dark hover:text-wood transition-colors font-serif text-xl"
       >
