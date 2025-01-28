@@ -3,6 +3,7 @@ import ActivityHero from "../components/ActivityHero";
 import ActivityHighlights from "../components/ActivityHighlights";
 import SeasonalActivities from "../components/SeasonalActivities";
 import LocalAttractions from "../components/LocalAttractions";
+import CustomServices from "../components/CustomServices";
 import Reviews from "../components/Reviews";
 
 const Activities = () => {
@@ -13,8 +14,9 @@ const Activities = () => {
         <ActivityHero />
         <div className="space-y-20">
           <ActivityHighlights />
-          <SeasonalActivities />
           <LocalAttractions />
+          <SeasonalActivities />
+          <CustomServices />
           <Reviews />
         </div>
       </div>

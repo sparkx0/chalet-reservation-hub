@@ -1,24 +1,31 @@
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { MapPin, ExternalLink } from "lucide-react";
+import { Button } from "./ui/button";
 
 const attractions = [
   {
     title: "Le Salève",
-    description: "Surnommée la « Balcon de Genève », cette montagne offre une vue imprenable sur le lac Léman et le Mont-Blanc.",
+    description: "Surnommée la « Balcon de Genève », cette montagne offre une vue imprenable sur le lac Léman et le Mont-Blanc. Profitez du téléphérique pour une montée spectaculaire.",
     image: "/lovable-uploads/0ce6cff6-6aba-49e0-9e8a-45515a175135.png",
-    distance: "5 min"
+    distance: "5 min",
+    website: "https://www.telepherique-du-saleve.com",
+    activities: ["Randonnée", "Parapente", "Restaurant panoramique"]
   },
   {
     title: "Lac d'Annecy",
-    description: "L'un des lacs les plus purs d'Europe, parfait pour la baignade, les sports nautiques ou simplement la détente.",
+    description: "L'un des lacs les plus purs d'Europe, parfait pour la baignade, les sports nautiques ou simplement la détente. La vieille ville d'Annecy, surnommée la Venise des Alpes, vous charmera.",
     image: "/lovable-uploads/a0abb74c-40ab-46eb-98b4-1744434757a9.png",
-    distance: "30 min"
+    distance: "30 min",
+    website: "https://www.lac-annecy.com",
+    activities: ["Baignade", "Paddle", "Croisière", "Vélo"]
   },
   {
     title: "Genève",
-    description: "Ville internationale aux multiples facettes, entre culture, shopping et gastronomie.",
+    description: "Ville internationale aux multiples facettes, entre culture, shopping et gastronomie. Ne manquez pas le jet d'eau, la vieille ville et les boutiques de luxe.",
     image: "/lovable-uploads/d7bfbf16-f70b-4310-8b52-e8e1798c2a04.png",
-    distance: "20 min"
+    distance: "20 min",
+    website: "https://www.geneve.com",
+    activities: ["Shopping", "Musées", "Restaurants étoilés"]
   }
 ];
 
@@ -49,23 +56,43 @@ const LocalAttractions = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-lg shadow-lg"
+              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="aspect-[4/3]">
+              <div className="relative aspect-[4/3]">
                 <img
                   src={attraction.image}
                   alt={attraction.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <div className="flex items-center gap-2 text-snow-light mb-2">
-                  <MapPin className="w-4 h-4" />
-                  <span>{attraction.distance}</span>
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
+                  <MapPin className="w-4 h-4 text-wood" />
+                  <span className="text-sm text-wood-dark">{attraction.distance}</span>
                 </div>
-                <h3 className="text-2xl font-serif mb-2">{attraction.title}</h3>
-                <p className="text-snow-light">{attraction.description}</p>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-serif text-wood-dark mb-3">{attraction.title}</h3>
+                <p className="text-stone-dark mb-4">{attraction.description}</p>
+                <div className="mb-4">
+                  <h4 className="font-medium text-wood-dark mb-2">Activités suggérées :</h4>
+                  <ul className="flex flex-wrap gap-2">
+                    {attraction.activities.map((activity) => (
+                      <li
+                        key={activity}
+                        className="bg-snow text-stone-dark px-3 py-1 rounded-full text-sm"
+                      >
+                        {activity}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Button
+                  variant="outline"
+                  className="w-full border-wood text-wood hover:bg-wood hover:text-white transition-colors"
+                  onClick={() => window.open(attraction.website, '_blank')}
+                >
+                  Plus d'informations
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </Button>
               </div>
             </motion.div>
           ))}
