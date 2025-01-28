@@ -10,7 +10,7 @@ export const DesktopMenu = ({ scrollToSection }: DesktopMenuProps) => {
 
   return (
     <div className="hidden md:flex items-center gap-8">
-      <div className="hidden md:flex gap-8">
+      <div className="hidden md:flex gap-6">
         <button
           onClick={() => scrollToSection("reservation")}
           className="text-wood-dark hover:text-wood transition-colors font-serif"
@@ -47,7 +47,7 @@ export const DesktopMenu = ({ scrollToSection }: DesktopMenuProps) => {
             location.pathname === "/spa" ? "text-wood" : ""
           }`}
         >
-          Spa & Bien-être
+          Spa
         </Link>
         <Link
           to="/events"
