@@ -2,8 +2,30 @@ import { motion } from "framer-motion";
 import Map from "@/components/Map";
 import Navigation from "@/components/Navigation";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const ChaletHistory = () => {
+  const images = [
+    {
+      src: "/lovable-uploads/37aa1fba-d804-4af0-b331-1dbeb3db8939.png",
+      alt: "Vue extérieure du chalet",
+    },
+    {
+      src: "/lovable-uploads/1fa5ade7-9389-4844-87eb-72a28c18610c.png",
+      alt: "Vue sur les montagnes",
+    },
+    {
+      src: "/lovable-uploads/e648d43b-e0c4-443d-b120-43117be90e8e.png",
+      alt: "Vue panoramique",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-snow">
       <Navigation />
@@ -28,17 +50,26 @@ const ChaletHistory = () => {
                 </p>
               </section>
 
-              <div className="mt-12 mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <img
-                  src="/lovable-uploads/37aa1fba-d804-4af0-b331-1dbeb3db8939.png"
-                  alt="Vue extérieure du chalet"
-                  className="rounded-lg shadow-lg"
-                />
-                <img
-                  src="/lovable-uploads/1fa5ade7-9389-4844-87eb-72a28c18610c.png"
-                  alt="Vue sur les montagnes"
-                  className="rounded-lg shadow-lg"
-                />
+              <div className="mt-12 mb-16">
+                <Carousel className="w-full max-w-3xl mx-auto">
+                  <CarouselContent>
+                    {images.map((image, index) => (
+                      <CarouselItem key={index}>
+                        <div className="p-1">
+                          <div className="relative aspect-[16/9] overflow-hidden rounded-lg">
+                            <img
+                              src={image.src}
+                              alt={image.alt}
+                              className="object-cover w-full h-full"
+                            />
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2" />
+                  <CarouselNext className="right-2" />
+                </Carousel>
               </div>
 
               <section className="mb-12">
@@ -106,10 +137,10 @@ const ChaletHistory = () => {
                   En période hivernale, les pneus neige sont vivement conseillés.
                 </p>
               </section>
-            </div>
 
-            <div className="h-[400px] mb-16 rounded-lg overflow-hidden shadow-lg">
-              <Map />
+              <div className="h-[400px] mb-16 rounded-lg overflow-hidden shadow-lg">
+                <Map />
+              </div>
             </div>
           </motion.div>
         </div>
