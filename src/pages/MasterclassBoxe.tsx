@@ -49,9 +49,20 @@ const MasterclassBoxe = () => {
                 transition={{ duration: 0.5 }}
                 className="prose prose-lg max-w-none"
               >
-                <p className="text-xl leading-relaxed text-stone-dark mb-8">
-                  Plongez dans l'univers de l'élite avec une opportunité exceptionnelle : une masterclass de coaching sportif animée par Nordine Oubaali, ancien champion du monde WBC de boxe anglaise et véritable icône du sport français.
-                </p>
+                <div className="flex flex-col md:flex-row gap-8 items-center mb-12">
+                  <div className="flex-1">
+                    <p className="text-xl leading-relaxed text-stone-dark">
+                      Plongez dans l'univers de l'élite avec une opportunité exceptionnelle : une masterclass de coaching sportif animée par Nordine Oubaali, ancien champion du monde WBC de boxe anglaise et véritable icône du sport français.
+                    </p>
+                  </div>
+                  <div className="flex-1">
+                    <img 
+                      src="/lovable-uploads/0ddf21c7-063c-4e1f-9585-2e38141fdf42.png"
+                      alt="Champion Nordine Oubaali avec sa ceinture WBC"
+                      className="rounded-lg shadow-lg w-full"
+                    />
+                  </div>
+                </div>
 
                 <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">
                   Pourquoi participer à cette masterclass ?
@@ -69,6 +80,14 @@ const MasterclassBoxe = () => {
                       <li>Recevez des conseils stratégiques personnalisés</li>
                     </ul>
                   </div>
+                </div>
+
+                <div className="my-12">
+                  <img 
+                    src="/lovable-uploads/9ab6941a-8634-494b-ae76-0d6427b1d281.png"
+                    alt="Nordine Oubaali en pesée officielle"
+                    className="rounded-lg shadow-lg w-full max-w-2xl mx-auto"
+                  />
                 </div>
 
                 <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">Programme de la journée</h2>
