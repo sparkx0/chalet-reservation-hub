@@ -22,7 +22,7 @@ const attractions = [
   {
     title: "Genève",
     description: "Ville internationale aux multiples facettes, entre culture, shopping et gastronomie. Ne manquez pas le jet d'eau, la vieille ville et les boutiques de luxe.",
-    image: "/lovable-uploads/d7bfbf16-f70b-4310-8b52-e8e1798c2a04.png",
+    image: "/lovable-uploads/c7a6f92f-1344-427d-ae43-5301bd8a0707.png",
     distance: "20 min",
     website: "https://www.geneve.com",
     activities: ["Shopping", "Musées", "Restaurants étoilés"]
