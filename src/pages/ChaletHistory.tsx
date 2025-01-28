@@ -84,8 +84,8 @@ const ChaletHistory = () => {
             <div className="prose prose-lg max-w-none text-wood-dark/80">
               <section className="mb-12">
                 <p className="text-xl leading-relaxed mb-6">
-                  Découvrez notre chalet d'exception en Haute-Savoie, un véritable havre de paix niché à 970 mètres d'altitude. 
-                  Alliant luxe contemporain et authenticité savoyarde, cette demeure finlandaise de 500m² offre un cadre idyllique 
+                  Découvrez notre chalet d'exception en Haute-Savoie, un véritable havre de paix niché à 1000 mètres d'altitude. 
+                  Alliant luxe contemporain et authenticité savoyarde, cette demeure finlandaise de 587m² offre un cadre idyllique 
                   pour vos séjours en famille ou entre amis, à seulement 30 minutes de l'aéroport de Genève.
                 </p>
               </section>
@@ -117,12 +117,12 @@ const ChaletHistory = () => {
                 <Card className="bg-white/80 backdrop-blur">
                   <CardContent className="p-6">
                     <ul className="space-y-3">
-                      <li>• 500m² habitables sur un terrain de 4000m² entièrement clos</li>
-                      <li>• Double salon/séjour de 120m² avec cheminée et plafond cathédrale</li>
+                      <li>• 587m² habitables sur un terrain de plus de 4200m² entièrement clos</li>
+                      <li>• Double salon/séjour de 120m² avec grande cheminée ouverte en pierre</li>
                       <li>• 5 chambres spacieuses avec salles de bains privatives</li>
                       <li>• Cuisine ouverte entièrement équipée</li>
                       <li>• Deux terrasses panoramiques en rez-de-chaussée et au premier étage</li>
-                      <li>• Parking privé et car-port</li>
+                      <li>• Parking privé et cars-park</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -138,6 +138,21 @@ const ChaletHistory = () => {
                       <li>• Sauna privatif</li>
                       <li>• Terrasse ensoleillée avec bains de soleil et barbecue</li>
                       <li>• Vue panoramique sur les Alpes</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </section>
+
+              <section className="mb-12">
+                <h2 className="text-2xl font-serif text-wood-dark mb-6">Équipements et services</h2>
+                <Card className="bg-white/80 backdrop-blur">
+                  <CardContent className="p-6">
+                    <ul className="space-y-3">
+                      <li>• Buanderie équipée (lave-linge et sèche-linge)</li>
+                      <li>• Cintres et draps fournis</li>
+                      <li>• Machine à café</li>
+                      <li>• Wifi haut débit</li>
+                      <li>• Service ménage supplémentaire sur demande</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -173,7 +188,7 @@ const ChaletHistory = () => {
 
               <section className="mb-12">
                 <p className="text-lg italic">
-                  Note : Le chalet est partagé avec deux chats résidents. Véhicule indispensable pour accéder au chalet. 
+                  Note : Véhicule indispensable pour accéder au chalet. 
                   En période hivernale, les pneus neige sont vivement conseillés.
                 </p>
               </section>
