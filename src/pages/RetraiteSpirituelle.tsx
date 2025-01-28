@@ -52,7 +52,7 @@ const RetraiteSpirituelle = () => {
                 <div className="flex flex-col md:flex-row gap-8 items-center mb-12">
                   <div className="flex-1">
                     <p className="text-xl leading-relaxed text-stone-dark">
-                      Découvrez une expérience unique de ressourcement spirituel dans le cadre majestueux des Alpes. Cette retraite exclusive vous offre l'opportunité de vous reconnecter avec vous-même, guidé par des maîtres spirituels reconnus.
+                      La retraite spirituelle de 7 jours est la parfaite occasion de se déconnecter entièrement des routines compulsives et des préoccupations futiles du monde extérieur pour plonger profondément en soi et aller se reconnecter à ce qui est véritablement essentiel.
                     </p>
                   </div>
                   <div className="flex-1">
@@ -62,6 +62,12 @@ const RetraiteSpirituelle = () => {
                       className="rounded-lg shadow-lg w-full"
                     />
                   </div>
+                </div>
+
+                <div className="bg-wood/5 p-8 rounded-lg my-12">
+                  <p className="text-lg leading-relaxed text-stone-dark italic">
+                    Pour la retraite annuelle, nos équipes ont tout mis en œuvre pour vous offrir une expérience qui vous changera comme l'école et l'université n'ont jamais pu le faire. Le concept de cette aventure est une expérience époustouflante combinant un lieu isolé au beau milieu du désert avec un programme d'enseignements et d'ateliers transformateurs.
+                  </p>
                 </div>
 
                 <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">
