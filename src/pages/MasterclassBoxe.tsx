@@ -53,8 +53,7 @@ const MasterclassBoxe = () => {
                   Plongez dans l'univers de l'élite avec une opportunité exceptionnelle : une masterclass de coaching sportif animée par Nordine Oubaali, ancien champion du monde WBC de boxe anglaise et véritable icône du sport français.
                 </p>
 
-                <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">Pourquoi participer à cette masterclass ?</h2>
-                
+                <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">Pourquoi participer à
                 <div className="grid md:grid-cols-2 gap-8 my-8">
                   <div className="bg-white p-6 rounded-lg shadow-md">
                     <h3 className="text-xl font-serif text-wood-dark mb-4">Apprenez de l'un des meilleurs</h3>
@@ -93,6 +92,22 @@ const MasterclassBoxe = () => {
                     <span>Session Questions/Réponses exclusive</span>
                   </li>
                 </ul>
+
+                <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">Hébergement et restauration</h2>
+                <div className="bg-white p-8 rounded-lg shadow-md space-y-4">
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-serif text-wood-dark">Chambres privatives</h3>
+                    <p>Chaque participant bénéficie d'une chambre individuelle, garantissant confort et intimité pour une récupération optimale.</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-serif text-wood-dark">Service traiteur premium</h3>
+                    <p>Une restauration bio et équilibrée, spécialement conçue pour les athlètes de haut niveau. Nos menus sont adaptés pour optimiser vos performances pendant la masterclass.</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-serif text-wood-dark">Service de ménage</h3>
+                    <p>Le service de ménage est assuré une fois pendant votre séjour ainsi qu'après votre départ, vous permettant de vous concentrer pleinement sur votre formation.</p>
+                  </div>
+                </div>
 
                 <div className="bg-wood/10 p-8 rounded-lg mt-12">
                   <h2 className="text-3xl font-serif text-wood-dark mb-6">Informations pratiques</h2>
