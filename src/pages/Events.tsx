@@ -62,12 +62,12 @@ const Events = () => {
               />
               <EventCard
                 id="3"
-                title="Séminaire Luxe"
+                title="Retraite Spirituelle"
                 date="10 Septembre 2024"
                 image="/lovable-uploads/37aa1fba-d804-4af0-b331-1dbeb3db8939.png"
-                description="Un cadre prestigieux pour vos événements professionnels"
-                price="Sur devis"
-                onSelect={() => setSelectedEvent("3")}
+                description="Un séjour de ressourcement et de méditation dans un cadre alpin"
+                price="1'499€"
+                onSelect={() => navigate("/retraite-spirituelle")}
               />
             </div>
           </div>
