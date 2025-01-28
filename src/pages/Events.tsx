@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import EventCard from "@/components/events/EventCard";
-import EventGallery from "@/components/events/EventGallery";
 import EventBooking from "@/components/events/EventBooking";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -73,9 +72,6 @@ const Events = () => {
             </div>
           </div>
         </section>
-
-        {/* Gallery */}
-        <EventGallery />
 
         {/* Booking Form */}
         <EventBooking selectedEvent={selectedEvent} />
