@@ -166,21 +166,34 @@ const Spa = () => {
 
             {/* Section Location Privative */}
             <div className="mt-16">
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl font-serif text-wood-dark text-center mb-8"
-              >
-                Location Privative de l'Espace Bien-être
-              </motion.h2>
-              <p className="text-center text-lg text-stone-dark mb-12">
-                Profitez de nos installations en toute intimité : piscine chauffée, sauna et salle de sport.
-              </p>
-            </div>
+              {/* Nouvelle bannière pour la section Location Privative */}
+              <div className="relative h-[40vh] w-full mb-8 rounded-xl overflow-hidden">
+                <div className="absolute inset-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1439337153520-7082a56a81f4"
+                    alt="Location privative espace bien-être"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40" />
+                </div>
+                <div className="relative h-full flex flex-col items-center justify-center">
+                  <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-4xl font-serif text-white text-center mb-4"
+                  >
+                    Location Privative de l'Espace Bien-être
+                  </motion.h2>
+                  <p className="text-center text-lg text-white/90 max-w-2xl px-4">
+                    Profitez de nos installations en toute intimité : piscine chauffée, sauna et salle de sport.
+                  </p>
+                </div>
+              </div>
 
-            <PrivateFeatures />
-            <PrivateBooking />
+              <PrivateFeatures />
+              <PrivateBooking />
+            </div>
           </motion.div>
         </div>
       </div>
