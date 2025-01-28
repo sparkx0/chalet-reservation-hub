@@ -14,7 +14,7 @@ const attractions = [
   {
     title: "Lac d'Annecy",
     description: "L'un des lacs les plus purs d'Europe, parfait pour la baignade, les sports nautiques ou simplement la détente. La vieille ville d'Annecy, surnommée la Venise des Alpes, vous charmera.",
-    image: "/lovable-uploads/a0abb74c-40ab-46eb-98b4-1744434757a9.png",
+    image: "/lovable-uploads/2073fae2-5a1e-4418-b337-721d8c2cfa9e.png",
     distance: "30 min",
     website: "https://www.lac-annecy.com",
     activities: ["Baignade", "Paddle", "Croisière", "Vélo"]
