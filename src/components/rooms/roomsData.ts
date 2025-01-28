@@ -20,7 +20,7 @@ export const rooms: Room[] = [
   },
   {
     id: 2,
-    name: "Atlas",
+    name: "La chambre Atlas",
     description: "Suite idéale pour les familles avec deux chambres séparées et un salon commun.",
     price: 420,
     superficie: 55,
@@ -29,7 +29,7 @@ export const rooms: Room[] = [
   },
   {
     id: 3,
-    name: "Mont-Blanc",
+    name: "La chambre Mont-Blanc",
     description: "Chambre élégante avec balcon privé et vue sur la vallée.",
     price: 320,
     superficie: 40,
@@ -38,7 +38,7 @@ export const rooms: Room[] = [
   },
   {
     id: 4,
-    name: "Alaska",
+    name: "La chambre Alaska",
     description: "Suite luxueuse avec salon séparé et jacuzzi privatif.",
     price: 520,
     superficie: 65,
@@ -47,7 +47,7 @@ export const rooms: Room[] = [
   },
   {
     id: 5,
-    name: "ALPINE",
+    name: "La chambre Alpine",
     description: "Chambre confortable et chaleureuse avec lit queen-size.",
     price: 240,
     superficie: 30,
