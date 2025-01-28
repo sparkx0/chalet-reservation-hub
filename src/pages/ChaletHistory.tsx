@@ -25,6 +25,22 @@ const ChaletHistory = () => {
       alt: "Vue panoramique",
     },
     {
+      src: "/lovable-uploads/395ec1d4-37b5-4380-b50d-7aed358bfc59.png",
+      alt: "Chambre avec plafond en bois et velux",
+    },
+    {
+      src: "/lovable-uploads/d6b359a4-c835-4970-a44d-0c52afd573c3.png",
+      alt: "Vue hivernale avec groupe dans la neige",
+    },
+    {
+      src: "/lovable-uploads/856d85f4-39f1-4e4c-854e-d47f5f64275d.png",
+      alt: "Vue panoramique d'été avec terrain",
+    },
+    {
+      src: "/lovable-uploads/6215370c-2a23-409f-854d-907f0963d140.png",
+      alt: "Coucher de soleil sur les montagnes",
+    },
+    {
       src: "/lovable-uploads/5808f818-1c44-43d6-a424-b3a73e33b08a.png",
       alt: "Vue depuis la terrasse",
     },
