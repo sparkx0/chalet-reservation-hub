@@ -5,8 +5,8 @@ const ActivityHero = () => {
     <div className="relative h-[90vh] w-full overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/lovable-uploads/0ce6cff6-6aba-49e0-9e8a-45515a175135.png"
-          alt="Vue panoramique du Mont Salève"
+          src="/lovable-uploads/d5a85a86-405f-46af-94e2-1c7c6465d6e6.png"
+          alt="Vue panoramique depuis le téléphérique du Salève sur Genève et le lac Léman"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
