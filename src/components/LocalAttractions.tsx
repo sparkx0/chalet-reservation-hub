@@ -6,7 +6,7 @@ const attractions = [
   {
     title: "Le Salève",
     description: "Surnommée la « Balcon de Genève », cette montagne offre une vue imprenable sur le lac Léman et le Mont-Blanc. Profitez du téléphérique pour une montée spectaculaire.",
-    image: "/lovable-uploads/0ce6cff6-6aba-49e0-9e8a-45515a175135.png",
+    image: "/lovable-uploads/79781741-314c-49a1-9fac-1d983a836174.png",
     distance: "5 min",
     website: "https://www.telepherique-du-saleve.com",
     activities: ["Randonnée", "Parapente", "Restaurant panoramique"]
