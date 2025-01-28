@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,8 +7,7 @@ import PrivateFeatures from "@/components/privatization/PrivateFeatures";
 import PrivateBooking from "@/components/privatization/PrivateBooking";
 
 const Spa = () => {
-  // Scroll to top on component mount
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
