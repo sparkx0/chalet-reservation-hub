@@ -64,6 +64,30 @@ const ChaletHistory = () => {
       src: "/lovable-uploads/fa5b57de-15ea-4212-8624-906732b882d5.png",
       alt: "Vue panoramique au coucher du soleil",
     },
+    {
+      src: "/lovable-uploads/34da5671-80f4-4092-a6f9-46a4633cb1f0.png",
+      alt: "Vue intérieure en hauteur du salon",
+    },
+    {
+      src: "/lovable-uploads/aad89083-f2d9-4bbe-a5f0-4e463c0dfd84.png",
+      alt: "Salle à manger avec vue panoramique",
+    },
+    {
+      src: "/lovable-uploads/39c337a6-5d2f-4339-ab94-faed13e9020c.png",
+      alt: "Salle de bain en bois avec velux",
+    },
+    {
+      src: "/lovable-uploads/8764ba99-eb0e-49ba-8513-758ecce7e307.png",
+      alt: "Salon cosy avec fauteuil suspendu",
+    },
+    {
+      src: "/lovable-uploads/5fa22c5d-d9c8-49b8-a8c8-16db6630c40c.png",
+      alt: "Salon chaleureux avec éclairage tamisé",
+    },
+    {
+      src: "/lovable-uploads/c3d90eef-e420-404f-8afa-1a1ae7ff2eb7.png",
+      alt: "Chambre confortable avec volets en bois",
+    },
   ];
 
   return (
