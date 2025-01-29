@@ -43,15 +43,6 @@ const Events = () => {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <EventCard
-                id="4"
-                title="Cours de Pâtisserie Professionnelle"
-                date="15 septembre 2025"
-                image="/lovable-uploads/2073fae2-5a1e-4418-b337-721d8c2cfa9e.png"
-                description="Formation exclusive de 4 jours avec le Chef Guillaume Vilalonga, maître pâtissier renommé pour ses créations exceptionnelles"
-                price="1'899€"
-                onSelect={() => navigate("/masterclass-patisserie")}
-              />
-              <EventCard
                 id="1"
                 title="Masterclass Exclusive avec Nordine Oubaali"
                 date="15 mars 2025"
@@ -77,6 +68,15 @@ const Events = () => {
                 description="Un séjour de ressourcement et de méditation dans un cadre alpin"
                 price="1'499€"
                 onSelect={() => navigate("/retraite-spirituelle")}
+              />
+              <EventCard
+                id="4"
+                title="Cours de Pâtisserie Professionnelle"
+                date="15 septembre 2025"
+                image="/lovable-uploads/2073fae2-5a1e-4418-b337-721d8c2cfa9e.png"
+                description="Formation exclusive de 4 jours avec le Chef Guillaume Vilalonga, maître pâtissier renommé pour ses créations exceptionnelles"
+                price="1'899€"
+                onSelect={() => navigate("/masterclass-patisserie")}
               />
             </div>
           </div>
