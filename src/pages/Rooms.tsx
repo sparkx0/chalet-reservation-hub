@@ -17,7 +17,7 @@ const Rooms = () => {
               Nos Chambres
             </h1>
             <p className="text-center text-wood-dark/80 mb-12">
-              Route du Salève, 74350 LE SAPPEY
+              ALT - 1000 mètres
             </p>
             <RoomsList />
           </motion.div>
