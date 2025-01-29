@@ -54,11 +54,11 @@ const Events = () => {
               <EventCard
                 id="2"
                 title="Week-end Bien-être"
-                date="22-23 Juillet 2024"
+                date="1 octobre 2025"
                 image="/lovable-uploads/1fa5ade7-9389-4844-87eb-72a28c18610c.png"
                 description="Yoga, méditation et soins spa dans un cadre exceptionnel"
                 price="450€"
-                onSelect={() => setSelectedEvent("2")}
+                onSelect={() => navigate("/wellness-weekend")}
               />
               <EventCard
                 id="3"

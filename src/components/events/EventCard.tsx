@@ -28,7 +28,6 @@ const EventCard = ({
   useEffect(() => {
     const calculateTimeLeft = () => {
       try {
-        // Parse the date string to a Date object
         const eventDate = parse(date, "d MMMM yyyy", new Date(), { locale: fr });
         const now = new Date();
         const diffInSeconds = differenceInSeconds(eventDate, now);
@@ -61,7 +60,8 @@ const EventCard = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+      onClick={onSelect}
     >
       <div className="relative h-48">
         <img
@@ -85,16 +85,10 @@ const EventCard = ({
               </div>
             ) : null}
           </div>
-          {!isExpired ? (
-            <button
-              onClick={onSelect}
-              className="bg-wood hover:bg-wood-dark text-white px-4 py-2 rounded transition-colors w-full"
-            >
-              Réserver
-            </button>
-          ) : (
+          {isExpired ? (
             <Link
               to="/contact"
+              onClick={(e) => e.stopPropagation()}
               className="group relative overflow-hidden bg-gradient-to-r from-wood to-wood-dark text-white px-4 py-3 rounded text-center transition-all duration-300 hover:shadow-lg"
             >
               <span className="relative z-10 font-medium">
@@ -102,6 +96,10 @@ const EventCard = ({
               </span>
               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
             </Link>
+          ) : (
+            <div className="text-center text-wood-dark font-medium">
+              Cliquez pour réserver
+            </div>
           )}
         </div>
       </div>
