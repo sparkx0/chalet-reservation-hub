@@ -15,7 +15,7 @@ const Logo = ({ variant = 'nav' }: LogoProps) => {
         />
       ) : (
         <img 
-          src="/lovable-uploads/b788a817-ac71-4ce3-9949-050f2ed19aae.png" 
+          src="/lovable-uploads/47318b36-7269-4485-acf2-02987a711480.png" 
           alt="Le Chalet du Salève"
           className="h-16 w-auto"
         />
