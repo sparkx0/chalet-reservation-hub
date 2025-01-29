@@ -17,7 +17,7 @@ const Rooms = () => {
               Nos Chambres
             </h1>
             <p className="text-center text-wood-dark/80 mb-12">
-              ALT - 1000 mètres
+              Respire l'air pur - ALT - 1000 mètres
             </p>
             <RoomsList />
           </motion.div>
