@@ -131,7 +131,7 @@ const RetraiteSpirituelle = () => {
                 <div className="bg-wood/10 p-8 rounded-lg mt-12">
                   <h2 className="text-3xl font-serif text-wood-dark mb-6">Informations pratiques</h2>
                   <ul className="space-y-4">
-                    <li><strong>Date :</strong> 10 septembre 2024</li>
+                    <li><strong>Date :</strong> 1 novembre 2025</li>
                     <li><strong>Lieu :</strong> Haute-savoie</li>
                     <li><strong>Tarif :</strong> 1'499 EUR</li>
                     <li><strong>Places :</strong> Limitées à 12 participants</li>
