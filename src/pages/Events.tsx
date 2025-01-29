@@ -78,6 +78,15 @@ const Events = () => {
                 price="1'899€"
                 onSelect={() => navigate("/masterclass-patisserie")}
               />
+              <EventCard
+                id="5"
+                title="Découverte du Chalet en Fuste"
+                date="15 novembre 2025"
+                image="/lovable-uploads/fb4cee1f-dafd-44dd-83ed-a077116ade8b.png"
+                description="Formation de 2 jours avec Damien RONCIN, charpentier d'exception. Découvrez l'art de la construction en fuste. Places limitées à 20 participants."
+                price="899€"
+                onSelect={() => navigate("/decouverte-fuste")}
+              />
             </div>
           </div>
         </section>
