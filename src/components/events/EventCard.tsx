@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { format, parse, differenceInSeconds } from "date-fns";
 import { fr } from "date-fns/locale";
+import { Button } from "@/components/ui/button";
 
 interface EventCardProps {
   id: string;
@@ -60,7 +61,7 @@ const EventCard = ({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
+      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group relative"
       onClick={onSelect}
     >
       <div className="relative h-48">
@@ -97,9 +98,15 @@ const EventCard = ({
               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
             </Link>
           ) : (
-            <div className="text-center text-wood-dark font-medium">
-              Cliquez pour réserver
-            </div>
+            <Button
+              onClick={(e) => {
+                e.stopPropagation();
+                onSelect();
+              }}
+              className="w-full bg-wood hover:bg-wood-dark text-white transition-colors duration-300"
+            >
+              Réserver / En savoir +
+            </Button>
           )}
         </div>
       </div>
