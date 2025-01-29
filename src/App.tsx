@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Index from "@/pages/Index";
 import Rooms from "@/pages/Rooms";
 import RoomDetail from "@/pages/RoomDetail";
@@ -14,9 +15,21 @@ import PrivatePool from "@/pages/PrivatePool";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 
+// Composant pour gérer le scroll en haut de page
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/rooms" element={<Rooms />} />

@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
 import Map from "@/components/Map";
+import Logo from "@/components/Logo";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -36,15 +37,19 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl font-serif text-wood-dark text-center mb-8">
-              Contactez-nous
-            </h1>
+            <div className="flex flex-col items-center mb-12">
+              <Logo variant="nav" />
+              <h1 className="text-4xl font-serif text-wood-dark text-center mt-8 mb-4">
+                Contactez-nous
+              </h1>
+              <div className="w-20 h-1 bg-wood-light rounded mb-8"></div>
+            </div>
 
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-2 gap-12 bg-white p-8 rounded-lg shadow-sm">
               <div>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-wood-dark mb-2">
+                    <label htmlFor="name" className="block text-wood-dark mb-2 font-medium">
                       Nom
                     </label>
                     <Input
@@ -53,12 +58,13 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
+                      className="border-wood-light focus:border-wood"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-wood-dark mb-2">
+                    <label htmlFor="email" className="block text-wood-dark mb-2 font-medium">
                       Email
                     </label>
                     <Input
@@ -68,12 +74,13 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
+                      className="border-wood-light focus:border-wood"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-wood-dark mb-2">
+                    <label htmlFor="subject" className="block text-wood-dark mb-2 font-medium">
                       Sujet
                     </label>
                     <Input
@@ -82,12 +89,13 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, subject: e.target.value })
                       }
+                      className="border-wood-light focus:border-wood"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-wood-dark mb-2">
+                    <label htmlFor="message" className="block text-wood-dark mb-2 font-medium">
                       Message
                     </label>
                     <Textarea
@@ -96,14 +104,14 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
+                      className="min-h-[150px] border-wood-light focus:border-wood"
                       required
-                      className="min-h-[150px]"
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full bg-wood hover:bg-wood-dark text-white"
+                    className="w-full bg-wood hover:bg-wood-dark text-white transition-colors"
                   >
                     Envoyer
                   </Button>
@@ -112,12 +120,12 @@ const Contact = () => {
 
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-2xl font-serif text-wood-dark mb-4">
+                  <h2 className="text-2xl font-serif text-wood-dark mb-6">
                     Informations
                   </h2>
                   <div className="space-y-4 text-stone-dark">
                     <p>
-                      <strong>Adresse:</strong>
+                      <strong className="text-wood-dark">Adresse:</strong>
                       <br />
                       Le Chalet du Salève
                       <br />
@@ -126,19 +134,19 @@ const Contact = () => {
                       74350 Le Sappey, France
                     </p>
                     <p>
-                      <strong>Téléphone:</strong>
+                      <strong className="text-wood-dark">Téléphone:</strong>
                       <br />
                       +33 (0)4 50 XX XX XX
                     </p>
                     <p>
-                      <strong>Email:</strong>
+                      <strong className="text-wood-dark">Email:</strong>
                       <br />
                       contact@chaletdusaleve.fr
                     </p>
                   </div>
                 </div>
 
-                <div className="h-[300px] rounded-lg overflow-hidden">
+                <div className="h-[300px] rounded-lg overflow-hidden shadow-sm">
                   <Map />
                 </div>
               </div>
