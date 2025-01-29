@@ -11,8 +11,9 @@ interface RoomCardProps {
 const RoomCard = ({ room }: RoomCardProps) => {
   const navigate = useNavigate();
   
-  const handleNavigate = () => {
-    navigate(`/room/${room.id}`);
+  const handleClick = () => {
+    const path = `/room/${room.id}`;
+    navigate(path);
   };
 
   const amenityIcons = {
@@ -27,7 +28,7 @@ const RoomCard = ({ room }: RoomCardProps) => {
   return (
     <Card 
       className="overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-      onClick={handleNavigate}
+      onClick={handleClick}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
