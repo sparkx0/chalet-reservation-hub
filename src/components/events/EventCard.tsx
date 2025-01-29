@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { format, differenceInSeconds } from "date-fns";
+import { format, parse, differenceInSeconds } from "date-fns";
 import { fr } from "date-fns/locale";
 
 interface EventCardProps {
@@ -27,21 +27,27 @@ const EventCard = ({
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const eventDate = new Date(date);
-      const now = new Date();
-      const diffInSeconds = differenceInSeconds(eventDate, now);
+      try {
+        // Parse the date string to a Date object
+        const eventDate = parse(date, "d MMMM yyyy", new Date(), { locale: fr });
+        const now = new Date();
+        const diffInSeconds = differenceInSeconds(eventDate, now);
 
-      if (diffInSeconds <= 0) {
+        if (diffInSeconds <= 0) {
+          setIsExpired(true);
+          return;
+        }
+
+        const days = Math.floor(diffInSeconds / (24 * 60 * 60));
+        const hours = Math.floor((diffInSeconds % (24 * 60 * 60)) / (60 * 60));
+        const minutes = Math.floor((diffInSeconds % (60 * 60)) / 60);
+        const seconds = diffInSeconds % 60;
+
+        setTimeLeft(`${days}j ${hours}h ${minutes}m ${seconds}s`);
+      } catch (error) {
+        console.error("Error parsing date:", error);
         setIsExpired(true);
-        return;
       }
-
-      const days = Math.floor(diffInSeconds / (24 * 60 * 60));
-      const hours = Math.floor((diffInSeconds % (24 * 60 * 60)) / (60 * 60));
-      const minutes = Math.floor((diffInSeconds % (60 * 60)) / 60);
-      const seconds = diffInSeconds % 60;
-
-      setTimeLeft(`${days}j ${hours}h ${minutes}m ${seconds}s`);
     };
 
     const timer = setInterval(calculateTimeLeft, 1000);
@@ -72,9 +78,7 @@ const EventCard = ({
         <p className="text-stone-dark mb-4">{description}</p>
         <div className="flex flex-col space-y-4">
           <div className="flex items-center justify-between">
-            <span className="text-wood font-medium">
-              {format(new Date(date), "d MMMM yyyy", { locale: fr })}
-            </span>
+            <span className="text-wood font-medium">{date}</span>
             {!isExpired ? (
               <div className="text-sm font-mono bg-wood/10 px-3 py-1 rounded-full text-wood-dark">
                 {timeLeft}
