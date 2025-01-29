@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Twitter } from "lucide-react";
 import Logo from "./Logo";
-import WorldClock from "./WorldClock";
+import SocialLinks from "./navigation/SocialLinks";
 
 const Footer = () => {
   return (
-    <footer className="bg-wood-light/10 border-t border-wood/10">
-      <WorldClock />
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-white py-12 border-t">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="space-y-4">
@@ -22,84 +21,54 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-serif text-wood-dark text-lg mb-4">Navigation</h3>
+            <h3 className="font-semibold text-wood-dark mb-4">Liens Rapides</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-wood-dark/80 hover:text-wood transition-colors">
-                  Accueil
+                <Link to="/rooms" className="text-wood-dark/80 hover:text-wood-dark text-sm">
+                  Nos Chambres
                 </Link>
               </li>
               <li>
-                <Link to="/activities" className="text-wood-dark/80 hover:text-wood transition-colors">
+                <Link to="/spa" className="text-wood-dark/80 hover:text-wood-dark text-sm">
+                  Le Spa
+                </Link>
+              </li>
+              <li>
+                <Link to="/activities" className="text-wood-dark/80 hover:text-wood-dark text-sm">
                   Activités
                 </Link>
               </li>
               <li>
-                <Link to="/spa" className="text-wood-dark/80 hover:text-wood transition-colors">
-                  Spa & Bien-être
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-wood-dark/80 hover:text-wood transition-colors">
-                  Contact
+                <Link to="/events" className="text-wood-dark/80 hover:text-wood-dark text-sm">
+                  Événements
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
-            <h3 className="font-serif text-wood-dark text-lg mb-4">Contact</h3>
+            <h3 className="font-semibold text-wood-dark mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li className="flex items-center gap-2 text-wood-dark/80">
-                <Phone className="w-4 h-4" />
-                <span>+33 4 50 XX XX XX</span>
+              <li className="text-wood-dark/80 text-sm">
+                Email: contact@chaletdusaleve.fr
               </li>
-              <li className="flex items-center gap-2 text-wood-dark/80">
-                <Mail className="w-4 h-4" />
-                <span>contact@chaletdusaleve.fr</span>
-              </li>
-              <li className="flex items-center gap-2 text-wood-dark/80">
-                <MapPin className="w-4 h-4" />
-                <span>Route du Salève, 74160 Beaumont</span>
+              <li className="text-wood-dark/80 text-sm">
+                Tél: +33 4 50 XX XX XX
               </li>
             </ul>
           </div>
 
           {/* Social Media */}
           <div>
-            <h3 className="font-serif text-wood-dark text-lg mb-4">Suivez-nous</h3>
-            <div className="flex gap-4">
-              <a
-                href="https://www.instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-wood-dark hover:text-wood transition-colors"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-wood-dark hover:text-wood transition-colors"
-              >
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-wood-dark hover:text-wood transition-colors"
-              >
-                <Youtube className="w-6 h-6" />
-              </a>
-            </div>
+            <h3 className="font-semibold text-wood-dark mb-4">Réseaux Sociaux</h3>
+            <SocialLinks className="flex gap-4" />
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-wood/10">
-          <p className="text-center text-wood-dark/60 text-sm">
+        {/* Copyright */}
+        <div className="mt-8 pt-8 border-t text-center">
+          <p className="text-wood-dark/60 text-sm">
             © {new Date().getFullYear()} Le Chalet du Salève. Tous droits réservés.
           </p>
         </div>
