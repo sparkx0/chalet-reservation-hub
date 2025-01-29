@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter } from "lucide-react";
 import Logo from "./Logo";
-import SocialLinks from "./navigation/SocialLinks";
+import { SocialLinks } from "./navigation/SocialLinks";
 
 const Footer = () => {
   return (
