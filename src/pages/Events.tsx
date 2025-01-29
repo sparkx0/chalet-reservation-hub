@@ -63,7 +63,7 @@ const Events = () => {
               <EventCard
                 id="3"
                 title="Retraite Spirituelle"
-                date="10 Septembre 2024"
+                date="1 novembre 2025"
                 image="/lovable-uploads/37aa1fba-d804-4af0-b331-1dbeb3db8939.png"
                 description="Un séjour de ressourcement et de méditation dans un cadre alpin"
                 price="1'499€"
