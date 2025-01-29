@@ -39,6 +39,44 @@ const MasterclassBoxe = () => {
           </div>
         </section>
 
+        {/* Video Section */}
+        <section className="py-20 bg-wood-dark/5">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="aspect-video rounded-xl overflow-hidden shadow-2xl mb-12"
+              >
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/0ORrKE7BL7U"
+                  title="Nordine Oubaali - Champion du Monde WBC"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="prose prose-lg max-w-none text-center mb-12"
+              >
+                <p className="text-2xl font-serif text-wood-dark italic">
+                  "La boxe n'est pas seulement un sport, c'est un art de vivre qui forge le caractère et révèle votre véritable potentiel."
+                </p>
+                <p className="text-lg text-stone-dark mt-4">
+                  - Nordine Oubaali, Champion du Monde WBC
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Content */}
         <section className="py-20">
           <div className="container mx-auto px-4">
@@ -52,7 +90,7 @@ const MasterclassBoxe = () => {
                 <div className="flex flex-col md:flex-row gap-8 items-center mb-12">
                   <div className="flex-1">
                     <p className="text-xl leading-relaxed text-stone-dark">
-                      Plongez dans l'univers de l'élite avec une opportunité exceptionnelle : une masterclass de coaching sportif animée par Nordine Oubaali, ancien champion du monde WBC de boxe anglaise et véritable icône du sport français.
+                      Saisissez une opportunité exceptionnelle de vous entraîner avec Nordine Oubaali, une véritable légende de la boxe française. Champion du Monde WBC, son parcours exemplaire et sa maîtrise technique font de lui un mentor d'exception. Cette masterclass exclusive vous permettra non seulement d'améliorer vos compétences techniques, mais aussi de développer votre mental de champion.
                     </p>
                   </div>
                   <div className="flex-1">
@@ -65,19 +103,20 @@ const MasterclassBoxe = () => {
                 </div>
 
                 <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">
-                  Pourquoi participer à cette masterclass ?
+                  Une expérience transformatrice
                 </h2>
                 <div className="grid md:grid-cols-2 gap-8 my-8">
                   <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h3 className="text-xl font-serif text-wood-dark mb-4">Apprenez de l'un des meilleurs</h3>
-                    <p>Nordine Oubaali, champion du monde WBC, incarne la persévérance, la rigueur et l'excellence. Fort de ses multiples titres internationaux et d'un parcours d'exception, il partagera avec vous les secrets qui font la différence sur le ring.</p>
+                    <h3 className="text-xl font-serif text-wood-dark mb-4">Excellence et expertise</h3>
+                    <p>Nordine Oubaali, avec son palmarès exceptionnel et sa passion pour la transmission, vous guidera personnellement vers l'excellence. Son approche unique combine technique de haut niveau et sagesse acquise au fil des années de compétition internationale.</p>
                   </div>
                   <div className="bg-white p-6 rounded-lg shadow-md">
-                    <h3 className="text-xl font-serif text-wood-dark mb-4">Un accompagnement sur mesure</h3>
+                    <h3 className="text-xl font-serif text-wood-dark mb-4">Un accompagnement d'élite</h3>
                     <ul className="list-disc pl-5 space-y-2">
-                      <li>Travaillez sur des techniques de boxe avancées</li>
-                      <li>Approfondissez votre préparation mentale</li>
-                      <li>Recevez des conseils stratégiques personnalisés</li>
+                      <li>Techniques avancées de boxe anglaise</li>
+                      <li>Préparation mentale de champion</li>
+                      <li>Stratégies de combat éprouvées</li>
+                      <li>Conseils personnalisés d'un champion du monde</li>
                     </ul>
                   </div>
                 </div>
@@ -90,53 +129,53 @@ const MasterclassBoxe = () => {
                   />
                 </div>
 
-                <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">Programme de la journée</h2>
+                <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">Programme intensif</h2>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-4">
                     <span className="font-bold">09:00</span>
-                    <span>Accueil et présentation par Nordine Oubaali</span>
+                    <span>Accueil VIP et présentation par Nordine Oubaali</span>
                   </li>
                   <li className="flex items-start gap-4">
                     <span className="font-bold">10:00</span>
-                    <span>Ateliers techniques et fondamentaux</span>
+                    <span>Techniques avancées et secrets de champion</span>
                   </li>
                   <li className="flex items-start gap-4">
                     <span className="font-bold">12:00</span>
-                    <span>Préparation physique intensive</span>
+                    <span>Préparation physique d'élite</span>
                   </li>
                   <li className="flex items-start gap-4">
                     <span className="font-bold">14:00</span>
-                    <span>Coaching mental et stratégie</span>
+                    <span>Masterclass sur le mental de champion</span>
                   </li>
                   <li className="flex items-start gap-4">
                     <span className="font-bold">16:00</span>
-                    <span>Session Questions/Réponses exclusive</span>
+                    <span>Session exclusive de questions/réponses et photos</span>
                   </li>
                 </ul>
 
-                <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">Hébergement et restauration</h2>
+                <h2 className="text-3xl font-serif text-wood-dark mt-12 mb-6">Prestations de luxe incluses</h2>
                 <div className="bg-white p-8 rounded-lg shadow-md space-y-4">
                   <div className="space-y-2">
-                    <h3 className="text-xl font-serif text-wood-dark">Chambres privatives</h3>
-                    <p>Chaque participant bénéficie d'une chambre individuelle, garantissant confort et intimité pour une récupération optimale.</p>
+                    <h3 className="text-xl font-serif text-wood-dark">Suite privative</h3>
+                    <p>Profitez d'une suite luxueuse pour votre séjour, offrant un confort optimal pour votre récupération.</p>
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-serif text-wood-dark">Service traiteur premium</h3>
-                    <p>Une restauration bio et équilibrée, spécialement conçue pour les athlètes de haut niveau. Nos menus sont adaptés pour optimiser vos performances pendant la masterclass.</p>
+                    <h3 className="text-xl font-serif text-wood-dark">Restauration gastronomique</h3>
+                    <p>Menus personnalisés préparés par notre chef étoilé, alliant plaisir gustatif et nutrition sportive.</p>
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-serif text-wood-dark">Service de ménage</h3>
-                    <p>Le service de ménage est assuré une fois pendant votre séjour ainsi qu'après votre départ, vous permettant de vous concentrer pleinement sur votre formation.</p>
+                    <h3 className="text-xl font-serif text-wood-dark">Service conciergerie</h3>
+                    <p>Un service personnalisé 24/7 pour répondre à tous vos besoins pendant votre séjour.</p>
                   </div>
                 </div>
 
                 <div className="bg-wood/10 p-8 rounded-lg mt-12">
-                  <h2 className="text-3xl font-serif text-wood-dark mb-6">Informations pratiques</h2>
+                  <h2 className="text-3xl font-serif text-wood-dark mb-6">Réservez votre expérience unique</h2>
                   <ul className="space-y-4">
                     <li><strong>Date :</strong> 15 mars 2025</li>
-                    <li><strong>Lieu :</strong> Haute-savoie</li>
-                    <li><strong>Tarif :</strong> 2'199 EUR</li>
-                    <li><strong>Places :</strong> Limitées</li>
+                    <li><strong>Lieu :</strong> Chalet de luxe en Haute-Savoie</li>
+                    <li><strong>Tarif :</strong> 2'199 EUR (tout inclus)</li>
+                    <li><strong>Places :</strong> Limitées à 10 participants</li>
                   </ul>
                   <div className="mt-8">
                     <Button
