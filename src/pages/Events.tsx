@@ -73,7 +73,7 @@ const Events = () => {
                 id="4"
                 title="Cours de Pâtisserie Professionnelle"
                 date="15 septembre 2025"
-                image="/lovable-uploads/2073fae2-5a1e-4418-b337-721d8c2cfa9e.png"
+                image="/lovable-uploads/4b81a0bc-82ba-4c65-9484-2bab98458460.png"
                 description="Formation exclusive de 4 jours avec le Chef Guillaume Vilalonga, maître pâtissier renommé pour ses créations exceptionnelles"
                 price="1'899€"
                 onSelect={() => navigate("/masterclass-patisserie")}
