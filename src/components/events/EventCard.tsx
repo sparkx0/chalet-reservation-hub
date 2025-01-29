@@ -23,6 +23,7 @@ const EventCard = ({
   onSelect,
 }: EventCardProps) => {
   const [isExpired, setIsExpired] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   return (
     <motion.div
@@ -34,9 +35,10 @@ const EventCard = ({
     >
       <div className="relative h-48">
         <img
-          src={image}
+          src={imageError ? "/placeholder.svg" : image}
           alt={title}
           className="w-full h-full object-cover"
+          onError={() => setImageError(true)}
         />
         <div className="absolute top-4 right-4 bg-wood text-white px-3 py-1 rounded-full text-sm">
           {price}

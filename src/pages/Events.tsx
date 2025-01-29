@@ -55,7 +55,7 @@ const Events = () => {
                 id="2"
                 title="Week-end Bien-être"
                 date="1 octobre 2025"
-                image="/lovable-uploads/1fa5ade7-9389-4844-87eb-72a28c18610c.png"
+                image="/lovable-uploads/c965e49e-b1eb-47c4-9e64-639dc8635dda.png"
                 description="Yoga, méditation et soins spa dans un cadre exceptionnel"
                 price="450€"
                 onSelect={() => navigate("/wellness-weekend")}
