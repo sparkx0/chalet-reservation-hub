@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { format, parse, differenceInSeconds } from "date-fns";
-import { fr } from "date-fns/locale";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import EventCountdown from "./EventCountdown";
+import ExpiredEventButton from "./ExpiredEventButton";
 
 interface EventCardProps {
   id: string;
@@ -23,38 +22,7 @@ const EventCard = ({
   price,
   onSelect,
 }: EventCardProps) => {
-  const [timeLeft, setTimeLeft] = useState<string>("");
   const [isExpired, setIsExpired] = useState(false);
-
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      try {
-        const eventDate = parse(date, "d MMMM yyyy", new Date(), { locale: fr });
-        const now = new Date();
-        const diffInSeconds = differenceInSeconds(eventDate, now);
-
-        if (diffInSeconds <= 0) {
-          setIsExpired(true);
-          return;
-        }
-
-        const days = Math.floor(diffInSeconds / (24 * 60 * 60));
-        const hours = Math.floor((diffInSeconds % (24 * 60 * 60)) / (60 * 60));
-        const minutes = Math.floor((diffInSeconds % (60 * 60)) / 60);
-        const seconds = diffInSeconds % 60;
-
-        setTimeLeft(`${days}j ${hours}h ${minutes}m ${seconds}s`);
-      } catch (error) {
-        console.error("Error parsing date:", error);
-        setIsExpired(true);
-      }
-    };
-
-    const timer = setInterval(calculateTimeLeft, 1000);
-    calculateTimeLeft();
-
-    return () => clearInterval(timer);
-  }, [date]);
 
   return (
     <motion.div
@@ -80,23 +48,12 @@ const EventCard = ({
         <div className="flex flex-col space-y-4">
           <div className="flex items-center justify-between">
             <span className="text-wood font-medium">{date}</span>
-            {!isExpired ? (
-              <div className="text-sm font-mono bg-wood/10 px-3 py-1 rounded-full text-wood-dark">
-                {timeLeft}
-              </div>
-            ) : null}
+            {!isExpired && (
+              <EventCountdown date={date} onExpire={() => setIsExpired(true)} />
+            )}
           </div>
           {isExpired ? (
-            <Link
-              to="/contact"
-              onClick={(e) => e.stopPropagation()}
-              className="group relative overflow-hidden bg-gradient-to-r from-wood to-wood-dark text-white px-4 py-3 rounded text-center transition-all duration-300 hover:shadow-lg"
-            >
-              <span className="relative z-10 font-medium">
-                Date expirée - Nous contacter
-              </span>
-              <div className="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-            </Link>
+            <ExpiredEventButton />
           ) : (
             <Button
               onClick={(e) => {
