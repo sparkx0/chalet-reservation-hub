@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
 import { Bed, Users, Bath, Maximize2, Image, CreditCard } from "lucide-react";
+import { addDays, differenceInDays } from "date-fns";
 import {
   Accordion,
   AccordionContent,
@@ -24,13 +26,25 @@ import {
 const RoomDetail = () => {
   const { id } = useParams();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [dateRange, setDateRange] = useState<{
+    from: Date;
+    to: Date | undefined;
+  }>({
+    from: new Date(),
+    to: undefined,
+  });
 
   const room = rooms.find((r) => r.id === Number(id));
 
   if (!room) {
     return <div>Chambre non trouvée</div>;
   }
+
+  const calculateTotalPrice = () => {
+    if (!dateRange.to) return room.price;
+    const nights = differenceInDays(dateRange.to, dateRange.from);
+    return nights * room.price;
+  };
 
   const additionalImages = room.id === 1 ? [
     room.image,
@@ -151,11 +165,21 @@ const RoomDetail = () => {
                         </span>
                       </div>
                       <Calendar
-                        mode="single"
-                        selected={date}
-                        onSelect={setDate}
+                        mode="range"
+                        selected={dateRange}
+                        onSelect={(range: any) => setDateRange(range)}
+                        numberOfMonths={2}
                         className="rounded-md border"
+                        disabled={{ before: new Date() }}
                       />
+                      <div className="text-lg font-semibold text-wood-dark">
+                        Total: {calculateTotalPrice()}€
+                        {dateRange.to && (
+                          <span className="text-sm font-normal ml-2">
+                            pour {differenceInDays(dateRange.to, dateRange.from)} nuits
+                          </span>
+                        )}
+                      </div>
                       <Button className="w-full bg-wood hover:bg-wood-dark text-white">
                         Réserver maintenant
                       </Button>
