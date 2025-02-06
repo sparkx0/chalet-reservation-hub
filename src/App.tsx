@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Index from "@/pages/Index";
@@ -12,6 +13,7 @@ import WellnessWeekend from "@/pages/WellnessWeekend";
 import Contact from "@/pages/Contact";
 import ChaletHistory from "@/pages/ChaletHistory";
 import PrivatePool from "@/pages/PrivatePool";
+import Success from "@/pages/Success";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 
@@ -43,6 +45,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/chalet-history" element={<ChaletHistory />} />
         <Route path="/private-pool" element={<PrivatePool />} />
+        <Route path="/success" element={<Success />} />
       </Routes>
       <Footer />
       <Toaster />
