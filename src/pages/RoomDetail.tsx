@@ -170,7 +170,6 @@ const RoomDetail = () => {
                         onSelect={(range: any) => setDateRange(range)}
                         numberOfMonths={2}
                         className="rounded-md border"
-                        disabled={{ before: new Date() }}
                       />
                       <div className="text-lg font-semibold text-wood-dark">
                         Total: {calculateTotalPrice()}€
@@ -210,3 +209,4 @@ const RoomDetail = () => {
 };
 
 export default RoomDetail;
+
