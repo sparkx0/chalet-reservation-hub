@@ -6,7 +6,7 @@ import { differenceInDays } from "date-fns";
 interface BookingSectionProps {
   price: number;
   dateRange: {
-    from: Date;
+    from: Date | undefined;
     to: Date | undefined;
   };
   onDateSelect: (range: any) => void;
@@ -36,7 +36,7 @@ const BookingSection = ({
       />
       <div className="text-lg font-semibold text-wood-dark">
         Total: {calculateTotalPrice()}€
-        {dateRange.to && (
+        {dateRange.from && dateRange.to && (
           <span className="text-sm font-normal ml-2">
             pour {differenceInDays(dateRange.to, dateRange.from)} nuits
           </span>

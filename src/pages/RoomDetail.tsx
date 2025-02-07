@@ -15,10 +15,10 @@ const RoomDetail = () => {
   const { id } = useParams();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [dateRange, setDateRange] = useState<{
-    from: Date;
+    from: Date | undefined;
     to: Date | undefined;
   }>({
-    from: new Date(),
+    from: undefined,
     to: undefined,
   });
 
@@ -29,7 +29,7 @@ const RoomDetail = () => {
   }
 
   const calculateTotalPrice = () => {
-    if (!dateRange.to) return room.price;
+    if (!dateRange.from || !dateRange.to) return room.price;
     const nights = differenceInDays(dateRange.to, dateRange.from);
     return nights * room.price;
   };
