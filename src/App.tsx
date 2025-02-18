@@ -16,6 +16,7 @@ import PrivatePool from "@/pages/PrivatePool";
 import Success from "@/pages/Success";
 import MasterclassPatisserie from "@/pages/MasterclassPatisserie";
 import DecouverteFuste from "@/pages/DecouverteFuste";
+import PrivateEvents from "@/pages/PrivateEvents";
 import Footer from "@/components/Footer";
 import { Toaster } from "sonner";
 
@@ -50,6 +51,7 @@ function App() {
         <Route path="/success" element={<Success />} />
         <Route path="/masterclass-patisserie" element={<MasterclassPatisserie />} />
         <Route path="/decouverte-fuste" element={<DecouverteFuste />} />
+        <Route path="/private-events" element={<PrivateEvents />} />
       </Routes>
       <Footer />
       <Toaster />
