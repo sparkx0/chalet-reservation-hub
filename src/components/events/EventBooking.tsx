@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
@@ -10,6 +11,7 @@ interface EventBookingProps {
 }
 
 const EventBooking = ({ selectedEvent }: EventBookingProps) => {
+  const [files, setFiles] = useState<FileList | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,10 +20,35 @@ const EventBooking = ({ selectedEvent }: EventBookingProps) => {
     message: "",
   });
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFiles = e.target.files;
+    if (selectedFiles) {
+      // Check file types
+      const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'image/png', 'image/jpeg'];
+      const validFiles = Array.from(selectedFiles).every(file => allowedTypes.includes(file.type));
+      
+      if (!validFiles) {
+        toast.error("Formats de fichiers acceptés: PDF, Word, PNG, JPG");
+        return;
+      }
+      
+      // Check file sizes (max 5MB each)
+      const validSizes = Array.from(selectedFiles).every(file => file.size <= 5 * 1024 * 1024);
+      
+      if (!validSizes) {
+        toast.error("La taille maximum par fichier est de 5MB");
+        return;
+      }
+
+      setFiles(selectedFiles);
+      toast.success(`${selectedFiles.length} fichier(s) sélectionné(s)`);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically send the data to your backend
-    console.log("Booking data:", { eventId: selectedEvent, ...formData });
+    console.log("Booking data:", { eventId: selectedEvent, ...formData, files });
     toast.success("Votre demande a été envoyée avec succès !");
     setFormData({
       name: "",
@@ -30,6 +57,10 @@ const EventBooking = ({ selectedEvent }: EventBookingProps) => {
       guests: "",
       message: "",
     });
+    setFiles(null);
+    // Reset file input
+    const fileInput = document.getElementById('files') as HTMLInputElement;
+    if (fileInput) fileInput.value = '';
   };
 
   return (
@@ -104,6 +135,20 @@ const EventBooking = ({ selectedEvent }: EventBookingProps) => {
                   }
                   placeholder="Précisez vos besoins particuliers..."
                 />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="files">Documents complémentaires</Label>
+                <Input
+                  id="files"
+                  type="file"
+                  onChange={handleFileChange}
+                  multiple
+                  accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
+                  className="cursor-pointer"
+                />
+                <p className="text-sm text-stone-dark mt-1">
+                  Formats acceptés: PDF, Word, PNG, JPG (max 5MB par fichier)
+                </p>
               </div>
               <button
                 type="submit"
