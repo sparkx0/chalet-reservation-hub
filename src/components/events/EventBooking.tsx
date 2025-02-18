@@ -94,89 +94,95 @@ const EventBooking = ({ selectedEvent }: EventBookingProps) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
           <h2 className="text-4xl font-serif text-wood-dark text-center mb-8">
             Réserver un Événement
           </h2>
           <div className="bg-white rounded-lg shadow-xl p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="name">Nom complet</Label>
-                <Input
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="phone">Téléphone</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
-                  }
-                  required
-                />
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label>Date de début</Label>
-                  <div className="border rounded-md p-2">
-                    <Calendar
-                      mode="single"
-                      selected={startDate}
-                      onSelect={setStartDate}
-                      className="rounded-md"
-                      disabled={(date) => date < new Date()}
+              <div className="grid lg:grid-cols-3 gap-6">
+                {/* Personal Information */}
+                <div className="space-y-6 lg:col-span-1">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Nom complet</Label>
+                    <Input
+                      id="name"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Téléphone</Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="guests">Nombre de personnes</Label>
+                    <Input
+                      id="guests"
+                      type="number"
+                      min="1"
+                      value={formData.guests}
+                      onChange={(e) =>
+                        setFormData({ ...formData, guests: e.target.value })
+                      }
+                      required
                     />
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <Label>Date de fin</Label>
-                  <div className="border rounded-md p-2">
-                    <Calendar
-                      mode="single"
-                      selected={endDate}
-                      onSelect={setEndDate}
-                      className="rounded-md"
-                      disabled={(date) => date < (startDate || new Date())}
-                    />
+
+                {/* Calendars */}
+                <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label>Date de début</Label>
+                    <div className="border rounded-md p-2">
+                      <Calendar
+                        mode="single"
+                        selected={startDate}
+                        onSelect={setStartDate}
+                        className="rounded-md"
+                        disabled={(date) => date < new Date()}
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Date de fin</Label>
+                    <div className="border rounded-md p-2">
+                      <Calendar
+                        mode="single"
+                        selected={endDate}
+                        onSelect={setEndDate}
+                        className="rounded-md"
+                        disabled={(date) => date < (startDate || new Date())}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="guests">Nombre de personnes</Label>
-                <Input
-                  id="guests"
-                  type="number"
-                  min="1"
-                  value={formData.guests}
-                  onChange={(e) =>
-                    setFormData({ ...formData, guests: e.target.value })
-                  }
-                  required
-                />
-              </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message (facultatif)</Label>
                 <Textarea
