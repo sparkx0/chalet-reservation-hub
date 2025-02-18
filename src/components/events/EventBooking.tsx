@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Calendar } from "@/components/ui/calendar";
 import { toast } from "sonner";
+import { format } from "date-fns";
 
 interface EventBookingProps {
   selectedEvent: string | null;
@@ -12,6 +14,8 @@ interface EventBookingProps {
 
 const EventBooking = ({ selectedEvent }: EventBookingProps) => {
   const [files, setFiles] = useState<FileList | null>(null);
+  const [startDate, setStartDate] = useState<Date>();
+  const [endDate, setEndDate] = useState<Date>();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -47,8 +51,26 @@ const EventBooking = ({ selectedEvent }: EventBookingProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!startDate || !endDate) {
+      toast.error("Veuillez sélectionner les dates de l'événement");
+      return;
+    }
+
+    if (endDate < startDate) {
+      toast.error("La date de fin doit être après la date de début");
+      return;
+    }
+
     // Here you would typically send the data to your backend
-    console.log("Booking data:", { eventId: selectedEvent, ...formData, files });
+    console.log("Booking data:", { 
+      eventId: selectedEvent, 
+      ...formData, 
+      startDate,
+      endDate,
+      files 
+    });
+    
     toast.success("Votre demande a été envoyée avec succès !");
     setFormData({
       name: "",
@@ -57,6 +79,8 @@ const EventBooking = ({ selectedEvent }: EventBookingProps) => {
       guests: "",
       message: "",
     });
+    setStartDate(undefined);
+    setEndDate(undefined);
     setFiles(null);
     // Reset file input
     const fileInput = document.getElementById('files') as HTMLInputElement;
@@ -112,6 +136,34 @@ const EventBooking = ({ selectedEvent }: EventBookingProps) => {
                   required
                 />
               </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label>Date de début</Label>
+                  <div className="border rounded-md p-2">
+                    <Calendar
+                      mode="single"
+                      selected={startDate}
+                      onSelect={setStartDate}
+                      className="rounded-md"
+                      disabled={(date) => date < new Date()}
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label>Date de fin</Label>
+                  <div className="border rounded-md p-2">
+                    <Calendar
+                      mode="single"
+                      selected={endDate}
+                      onSelect={setEndDate}
+                      className="rounded-md"
+                      disabled={(date) => date < (startDate || new Date())}
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div className="space-y-2">
                 <Label htmlFor="guests">Nombre de personnes</Label>
                 <Input
