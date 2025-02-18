@@ -1,9 +1,9 @@
-
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
+import EventBooking from "@/components/events/EventBooking";
 import { 
   Users, 
   PartyPopper, 
@@ -181,31 +181,8 @@ const PrivateEvents = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-3xl mx-auto text-center"
-            >
-              <h2 className="text-4xl font-serif text-wood-dark mb-6">
-                Organisez Votre Événement
-              </h2>
-              <p className="text-lg text-stone-dark mb-8">
-                Contactez-nous pour obtenir un devis personnalisé et découvrir comment nous pouvons
-                rendre votre événement unique.
-              </p>
-              <Button
-                onClick={() => navigate("/contact")}
-                className="bg-wood hover:bg-wood-dark text-white"
-              >
-                Demander un devis
-              </Button>
-            </motion.div>
-          </div>
-        </section>
+        {/* Booking Form */}
+        <EventBooking selectedEvent={null} />
       </div>
     </div>
   );
